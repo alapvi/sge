@@ -1,0 +1,80 @@
+site_name: Sistemas de Gestión Empresarial
+site_url: https://alapvi.github.io/sge
+
+nav:
+  - Presentación: index.md
+  - Introducción ERP: 
+    - Introducción: intro/intro.md
+    - Concepto de SGE: intro/sge.md
+    - Arquitectura de un ERP: intro/arquitecturaerp.md
+    - Tipos de licencias y de instalación de un ERP: intro/tiposinst.md
+    - Instalación de Odoo: intro/odooinst.md
+    - Visual Studio Code: intro/vscode.md
+  - Estructura de un ERP:
+    - Módulos en Odoo: modulos/moduloserp.md
+    - Instalación de módulos: modulos/instmoderp.md
+    - Implantación de un ERP: modulos/implanerp.md
+  - Organización, consulta y modificación de la información: 
+    - Acceso a la BD: infodatos/accesopsql.md 
+    - Los datos en Odoo: infodatos/datosodoo.md
+    - MVC y consulta de información en Odoo: infodatos/webymvc.md
+  - Mi primera App en Odoo:
+    - Estructura de la app: apps/firstapp.md
+    - Crear un nuevo modelo: apps/createmodel.md
+    - Crear los menús: apps/addmenu.md
+    - Añadir permisos de acceso: apps/accesslist.md
+    - Crear las vistas personalizadas: apps/createviews.md
+    - Añadir filtros y agrupaciones: apps/searchviews.md
+    - Añadir lógica de negocio: apps/addlogic.md
+    - Añadir un icono: apps/addicon.md
+  - Tutorial de Python:
+    - Python: tutpython/tutpython.md
+  - Modelos:
+    - Campos básicos: modelos/basicfields.md
+
+theme:
+  name: material
+  language: es
+  features:
+    - content.code.copy
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-7 
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+markdown_extensions:
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
+  - pymdownx.blocks.caption
+  - admonition                         
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+plugins:
+  - tags
+  - search
+  #- minify:
+  #    minify_html: true
+  #    minify_js: true
+  #    minify_css: true
+  #    htmlmin_opts:
+  #        remove_comments: true
+  #    cache_safe: true
+
