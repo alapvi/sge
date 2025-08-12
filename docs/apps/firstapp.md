@@ -132,4 +132,4 @@ docker exec -it odoo18_web_1 sh -lc '
 
 ## 📝 Actividad
 !!! Question "Crear una app"
-    1. Crea una app llamada task_model y haz su intalación  
+    1. Crea una app llamada `task_model` y haz su intalación  

@@ -122,12 +122,4 @@ ORDER BY ordinal_position;
 ## 📝 Actividades
 !!! Question "Crear un modelo"
     1. Crea el modelo `task_model` con los campos descritos anteriormente
-    2. Crea otro modelo `category_model` para que podamos categorizar las tareas. En este modelo tendremos un nombre de categoría, una descripción y una imagen que represente la categoría.
-    3. Añadir un nuevo campo en el modelo `task_model` llamado category_id que haga referencia al modelo de categorías mediante una relación `Many2one`.
-    4. Añade los menús y las vistas que creas necesarias para que se pueda consultar la información.
-
-
-<figure markdown="span">
-    !["Modelo de categorías (campos)"](images/createmodel_03.png){width="100%" }
-    <figcaption>Modelo de Categorías </figcaption>
-</figure>
+ 
