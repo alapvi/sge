@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/intro/vscode/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Visual Studio Code - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../tiposinst/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../modelos/basicfields/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#visual-studio-code" class="nav-link">Visual Studio Code</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#configuracion-de-vs-code-para-tu-plataforma" class="nav-link">Configuración de VS Code para tu plataforma</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#visual-studio-en-debian" class="nav-link">Visual Studio en Debian</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#proximos-pasos" class="nav-link">Próximos pasos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad" class="nav-link">📝 Actividad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="visual-studio-code">Visual Studio Code</h1>
+<p>Visual Studio Code es un editor de código gratuito que funciona en los sistemas operativos macOS, Linux y Windows. Su instalación es rápida y sencilla, permitiéndote comenzar a trabajar en minutos.</p>
+<p>VS Code es ligero y debería funcionar en la mayoría de los equipos y versiones de plataformas disponibles. Puedes revisar los <a href="https://code.visualstudio.com/docs/supporting/requirements">Requisitos del sistema</a> para verificar si tu configuración de computadora es compatible.</p>
+<h2 id="configuracion-de-vs-code-para-tu-plataforma">Configuración de VS Code para tu plataforma</h2>
+<p><strong>Descargar e instalar Visual Studio Code para tu plataforma</strong></p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/setup/mac">macOS</a></li>
+<li><a href="https://code.visualstudio.com/docs/setup/linux">Linux</a></li>
+<li><a href="https://code.visualstudio.com/docs/setup/windows">Windows</a></li>
+</ul>
+<blockquote>
+<p>Nota: VS Code publica nuevas versiones mensualmente y admite actualizaciones automáticas cuando una nueva versión está disponible.</p>
+</blockquote>
+<p><strong>Instalar extensiones de VS Code desde el Marketplace de Visual Studio</strong></p>
+<p>Personaliza VS Code con temas, formateadores, extensiones de lenguaje y depuradores para tus lenguajes favoritos, entre otros.</p>
+<h2 id="visual-studio-en-debian">Visual Studio en Debian</h2>
+<p>Completa los siguientes pasos para instalar Visual Studio Code en tu sistema Debian.</p>
+<ol>
+<li>Empieza por actualizar el índice de paquetes e instalar las dependencias escribiendo:</li>
+</ol>
+<pre><code class="language-bash">apt update
+apt install software-properties-common apt-transport-https curl
+</code></pre>
+<ol>
+<li>Importa la clave GPG de Microsoft usando el siguiente comando <code>curl</code>:</li>
+</ol>
+<pre><code class="language-bash">curl -sSL https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+</code></pre>
+<ol>
+<li>Añade el repositorio de Visual Studio Code a tu sistema:</li>
+</ol>
+<pre><code class="language-bash">add-apt-repository &quot;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&quot;
+</code></pre>
+<ol>
+<li>Después de agregar el repositorio, instala la última versión de Visual Studio Code:</li>
+</ol>
+<pre><code class="language-bash">apt update
+apt install code
+</code></pre>
+<p>¡Eso es todo!</p>
+<p>Visual Studio Code ha sido instalado en tu escritorio Debian y ya puedes comenzar a usarlo.</p>
+<h2 id="proximos-pasos">Próximos pasos</h2>
+<p>Una vez que hayas instalado VS Code, estos temas te ayudarán a aprender más sobre él:</p>
+<ul>
+<li><a href="https://code.visualstudio.com/docs/getstarted/keybindings">Tutorial de VS Code</a>: Un recorrido práctico por las características clave de VS Code.</li>
+<li><a href="https://code.visualstudio.com/docs/getstarted/keybindings">Consejos y trucos</a>: Una colección de consejos de productividad para trabajar con VS Code.</li>
+<li><a href="https://code.visualstudio.com/docs/getstarted/keybindings">Codificación asistida por IA</a>: Aprende a usar GitHub Copilot en VS Code para ayudarte a escribir código más rápido.</li>
+</ul>
+<h2 id="actividad">📝 Actividad</h2>
+<p>!!! Question "Instala vscode"
+    1. Haz una instalación de vscode.  </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

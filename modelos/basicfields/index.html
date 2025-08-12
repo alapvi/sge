@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/modelos/basicfields/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Creación de un modelo - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../intro/vscode/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../modulos/implanerp/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#creacion-de-un-modelo" class="nav-link">Creación de un modelo</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#estructura-previa-del-modulo" class="nav-link">Estructura previa del módulo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#codigo-del-modelo" class="nav-link">Código del modelo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#explicacion-detallada" class="nav-link">Explicación detallada</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#notas-minimas-para-que-odoo-cargue-el-modelo" class="nav-link">Notas mínimas para que Odoo cargue el modelo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#campos-basicos" class="nav-link">Campos básicos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-campos-relacionales" class="nav-link">2) Campos relacionales</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-campos-computados-y-relacionados" class="nav-link">3) Campos computados y relacionados</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-atributos-comunes-cheatsheet" class="nav-link">4) Atributos comunes (cheatsheet)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-campos-especiales-reservados-mas-comunes" class="nav-link">5) Campos especiales / reservados más comunes</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-ejemplo-compacto-de-modelo-con-varios-tipos" class="nav-link">6) Ejemplo compacto de modelo con varios tipos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-consejos-rapidos" class="nav-link">7) Consejos rápidos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="creacion-de-un-modelo">Creación de un modelo</h1>
+<p>Vamos a ver de manera detallada <strong>cómo crear un modelo en Odoo 18</strong> . </p>
+<hr />
+<h2 id="estructura-previa-del-modulo">Estructura previa del módulo</h2>
+<p>Suponemos que ya tienes un módulo visible en Odoo con el manifest mínimo. La estructura debería incluir al menos:</p>
+<pre><code>task_app/
+├─ __init__.py
+├─ __manifest__.py
+└─ models/
+   └─ __init__.py
+</code></pre>
+<p>Si no existe <code>models/</code> o alguno de los <code>__init__</code>, créalos ahora (vacíos).</p>
+<hr />
+<h2 id="codigo-del-modelo">Código del modelo</h2>
+<p>Ruta del archivo: <code>task_app/models/task_model.py</code></p>
+<pre><code class="language-python"># task_app/models/task_model.py
+from odoo import fields, models
+
+class TaskModel(models.Model):
+    _name = &quot;task_app.task_model&quot;
+    _description = &quot;Task (basic model)&quot;
+
+    name = fields.Char(string=&quot;Name&quot;, required=True, index=True)
+    description = fields.Text(string=&quot;Description&quot;)
+    is_done = fields.Boolean(string=&quot;Done&quot;, default=False)
+</code></pre>
+<hr />
+<h2 id="explicacion-detallada">Explicación detallada</h2>
+<h3 id="importaciones">Importaciones</h3>
+<ul>
+<li><code>from odoo import fields, models</code><br />
+  Importa el <strong>ORM</strong> de Odoo. <code>models.Model</code> es la clase base para todos los modelos, y <code>fields</code> contiene los tipos de campos disponibles (Char, Text, Boolean, Many2one, etc.).</li>
+</ul>
+<h3 id="definicion-de-la-clase">Definición de la clase</h3>
+<ul>
+<li><code>class TaskModel(models.Model):</code><br />
+  Declara una <strong>clase de modelo</strong> que hereda de <code>models.Model</code>. El nombre de la clase en Python (p. ej., <code>TaskModel</code>) puede ser cualquiera, pero por convención se usa <strong>CamelCase</strong> y describe la entidad.</li>
+</ul>
+<h3 id="metadatos-del-modelo">Metadatos del modelo</h3>
+<ul>
+<li><code>_name = "task_app.task_model"</code><br />
+  Es el <strong>nombre técnico</strong> del modelo (también llamado <em>model name</em>).  </li>
+<li>Suele incluir el <strong>prefijo del módulo</strong> (<code>task_app</code>) para evitar colisiones con otros módulos.  </li>
+<li>Este nombre se usa en vistas XML, reglas de acceso, dominios, etc.</li>
+<li><code>_description = "Task (basic model)"</code><br />
+  Cadena legible que describe el modelo. Se utiliza en la interfaz para etiquetas y títulos.</li>
+</ul>
+<h3 id="campos-del-modelo">Campos del modelo</h3>
+<ul>
+<li><code>name = fields.Char(...)</code><br />
+  Campo de <strong>texto corto</strong>.  </li>
+<li><code>string="Name"</code> etiqueta visible en la UI.  </li>
+<li><code>required=True</code> obliga a que tenga valor antes de crear/guardar el registro.  </li>
+<li><code>index=True</code> crea un índice en BD para búsquedas más rápidas por este campo.</li>
+<li><code>description = fields.Text(...)</code><br />
+  Campo de <strong>texto largo</strong> (sin límite práctico a nivel de ORM). Ideal para descripciones.</li>
+<li><code>is_done = fields.Boolean(...)</code><br />
+  Campo <strong>booleano</strong>.  </li>
+<li><code>default=False</code> define el valor por defecto al crear registros.</li>
+</ul>
+<blockquote>
+<p><strong>Sugerencia:</strong> Si no especificas <code>_rec_name</code>, Odoo usa por defecto el campo <code>name</code> para representar el registro (por ejemplo, en desplegables Many2one).</p>
+</blockquote>
+<hr />
+<h2 id="notas-minimas-para-que-odoo-cargue-el-modelo">Notas mínimas para que Odoo cargue el modelo</h2>
+<ul>
+<li>Asegúrate de importar el archivo en <code>task_app/models/__init__.py</code> (por ejemplo: <code>from . import task_model</code>).  </li>
+<li>Incluye el módulo en tu base de datos y actualízalo desde Apps o con <code>-u task_app</code> si trabajas desde la línea de comandos.</li>
+</ul>
+<p>Basado en la referencia oficial del ORM de Odoo 18:<br />
+- Documentación ORM (fields): https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html#fields</p>
+<hr />
+<h2 id="campos-basicos">Campos básicos</h2>
+<h3 id="char"><code>Char</code></h3>
+<ul>
+<li><strong>Texto corto</strong>. Útil para nombres, códigos, títulos.</li>
+<li>Atributos típicos: <code>size</code> (límite de longitud), <code>index</code>, <code>required</code>.</li>
+</ul>
+<pre><code class="language-python">code = fields.Char(string=&quot;Código&quot;, size=32, index=True, required=True)
+</code></pre>
+<h3 id="text"><code>Text</code></h3>
+<ul>
+<li><strong>Texto largo</strong> sin límite práctico (almacenado como <code>text</code> en PostgreSQL).</li>
+</ul>
+<pre><code class="language-python">description = fields.Text(string=&quot;Descripción&quot;)
+</code></pre>
+<h3 id="boolean"><code>Boolean</code></h3>
+<ul>
+<li><strong>Verdadero / Falso</strong>.</li>
+</ul>
+<pre><code class="language-python">is_done = fields.Boolean(string=&quot;Realizada&quot;, default=False)
+</code></pre>
+<h3 id="integer"><code>Integer</code></h3>
+<ul>
+<li><strong>Entero</strong> (32 bits).</li>
+</ul>
+<pre><code class="language-python">priority = fields.Integer(string=&quot;Prioridad&quot;, default=0)
+</code></pre>
+<h3 id="float"><code>Float</code></h3>
+<ul>
+<li><strong>Número decimal</strong>.</li>
+<li>Atributo <code>digits</code> para control de precisión.</li>
+</ul>
+<pre><code class="language-python">weight = fields.Float(string=&quot;Peso (kg)&quot;, digits=(16, 2))
+</code></pre>
+<h3 id="monetary"><code>Monetary</code></h3>
+<ul>
+<li><strong>Decimal</strong> asociado a una <strong>moneda</strong> (<code>currency_field</code>).</li>
+</ul>
+<pre><code class="language-python">currency_id = fields.Many2one(&quot;res.currency&quot;, string=&quot;Moneda&quot;)
+amount = fields.Monetary(string=&quot;Importe&quot;, currency_field=&quot;currency_id&quot;, digits=(16, 2))
+</code></pre>
+<h3 id="date"><code>Date</code></h3>
+<ul>
+<li><strong>Fecha</strong> sin hora.</li>
+</ul>
+<pre><code class="language-python">deadline = fields.Date(string=&quot;Fecha límite&quot;)
+</code></pre>
+<h3 id="datetime"><code>Datetime</code></h3>
+<ul>
+<li><strong>Fecha y hora</strong> (timezone-aware a nivel de UI).</li>
+</ul>
+<pre><code class="language-python">scheduled_at = fields.Datetime(string=&quot;Programada&quot;)
+</code></pre>
+<h3 id="selection"><code>Selection</code></h3>
+<ul>
+<li>Valor <strong>enumerado</strong> entre opciones cerradas.</li>
+<li>Puedes usar <code>selection=[(...), ...]</code> o <code>selection=_method</code>.</li>
+</ul>
+<pre><code class="language-python">state = fields.Selection(
+    [
+        (&quot;draft&quot;, &quot;Borrador&quot;),
+        (&quot;progress&quot;, &quot;En progreso&quot;),
+        (&quot;done&quot;, &quot;Hecho&quot;),
+        (&quot;cancel&quot;, &quot;Cancelado&quot;),
+    ],
+    string=&quot;Estado&quot;,
+    default=&quot;draft&quot;,
+    index=True,
+)
+</code></pre>
+<h3 id="binary"><code>Binary</code></h3>
+<ul>
+<li><strong>Binario</strong> (archivos). Suele usarse con <code>attachment=True</code> para almacenar en adjuntos.</li>
+</ul>
+<pre><code class="language-python">file_data = fields.Binary(string=&quot;Adjunto&quot;, attachment=True)
+</code></pre>
+<h3 id="html"><code>Html</code></h3>
+<ul>
+<li><strong>HTML enriquecido</strong> (editor WYSIWYG).</li>
+</ul>
+<pre><code class="language-python">notes_html = fields.Html(string=&quot;Notas&quot;)
+</code></pre>
+<h3 id="image"><code>Image</code></h3>
+<ul>
+<li>Imagen almacenada en binario con utilidades de <strong>redimensionado</strong>.</li>
+</ul>
+<pre><code class="language-python">image = fields.Image(string=&quot;Imagen&quot;, max_width=512, max_height=512)
+</code></pre>
+<hr />
+<h2 id="2-campos-relacionales">2) Campos relacionales</h2>
+<h3 id="many2one"><code>Many2one</code></h3>
+<ul>
+<li>Relación <strong>muchas a una</strong> hacia otro modelo (crea columna <code>&lt;campo&gt;_id</code>).</li>
+<li>Atributos clave: <code>comodel_name</code>, <code>ondelete</code>, <code>domain</code>, <code>context</code>, <code>index</code>.</li>
+</ul>
+<pre><code class="language-python">partner_id = fields.Many2one(
+    &quot;res.partner&quot;,
+    string=&quot;Contacto&quot;,
+    ondelete=&quot;set null&quot;,
+    index=True,
+    domain=[(&quot;active&quot;, &quot;=&quot;, True)],
+)
+</code></pre>
+<h3 id="one2many"><code>One2many</code></h3>
+<ul>
+<li>Relación <strong>una a muchas</strong> (virtual), inversa a un <code>Many2one</code> en el modelo destino.</li>
+<li>Requiere <code>comodel_name</code> y <code>inverse_name</code> (el <code>Many2one</code> que apunta a este modelo).</li>
+</ul>
+<pre><code class="language-python">line_ids = fields.One2many(
+    &quot;task.line&quot;,
+    &quot;task_id&quot;,          # inverse_name en el modelo task.line
+    string=&quot;Líneas&quot;
+)
+</code></pre>
+<h3 id="many2many"><code>Many2many</code></h3>
+<ul>
+<li>Relación <strong>muchas a muchas</strong> usando una tabla relacional.</li>
+<li>Se puede especificar tabla/columnas o dejar que Odoo las genere.</li>
+</ul>
+<pre><code class="language-python">tag_ids = fields.Many2many(
+    &quot;task.tag&quot;,
+    &quot;task_tag_rel&quot;,     # nombre de la tabla relacional (opcional)
+    &quot;task_id&quot;,          # columna que referencia a este modelo (opcional)
+    &quot;tag_id&quot;,           # columna que referencia al comodel (opcional)
+    string=&quot;Etiquetas&quot;,
+)
+</code></pre>
+<hr />
+<h2 id="3-campos-computados-y-relacionados">3) Campos computados y relacionados</h2>
+<h3 id="campo-computado-compute">Campo <strong>computado</strong> (<code>compute</code>)</h3>
+<ul>
+<li>El valor se calcula por código. Con <code>store=True</code> se guarda en BD (y define dependencias con <code>@api.depends</code>).</li>
+</ul>
+<pre><code class="language-python">from odoo import api, fields, models
+
+class Task(models.Model):
+    _name = &quot;x.task&quot;
+
+    name = fields.Char(required=True)
+    hours = fields.Float()
+    rate = fields.Float()
+    amount = fields.Float(compute=&quot;_compute_amount&quot;, store=True)
+
+    @api.depends(&quot;hours&quot;, &quot;rate&quot;)
+    def _compute_amount(self):
+        for rec in self:
+            rec.amount = rec.hours * rec.rate
+</code></pre>
+<h3 id="campo-relacionado-related">Campo <strong>relacionado</strong> (<code>related</code>)</h3>
+<ul>
+<li>Apunta a un campo de otra relación. Opcionalmente <code>store=True</code> para almacenar una copia sincronizada.</li>
+</ul>
+<pre><code class="language-python">partner_country = fields.Many2one(
+    related=&quot;partner_id.country_id&quot;,
+    comodel_name=&quot;res.country&quot;,
+    string=&quot;País (cliente)&quot;,
+    store=True,
+    readonly=True,
+)
+</code></pre>
+<hr />
+<h2 id="4-atributos-comunes-cheatsheet">4) Atributos comunes (cheatsheet)</h2>
+<blockquote>
+<p>No todos aplican a todos los tipos; consulta la doc oficial para detalles y compatibilidades.</p>
+</blockquote>
+<ul>
+<li><code>string="Etiqueta"</code> → Texto mostrado en la UI.</li>
+<li><code>help="Texto de ayuda"</code> → Tooltip de ayuda.</li>
+<li><code>required=True</code> → Hace obligatorio el campo.</li>
+<li><code>default=&lt;valor|función&gt;</code> → Valor por defecto (literal o función/<code>lambda</code>).</li>
+<li><code>index=True</code> → Índice en BD (búsqueda más rápida).</li>
+<li><code>copy=True/False</code> → Se copia al duplicar el registro.</li>
+<li><code>readonly=True</code> → Solo lectura en la UI (no evita cambios por código).</li>
+<li><code>states={...}</code> → Modifica atributos según estado (vistas form).</li>
+<li><code>groups="module.group_xmlid"</code> → Visibilidad/edición restringida a grupos.</li>
+<li><code>tracking=True/number</code> → Rastreo en chatter (si el modelo hereda de <code>mail.thread</code>).</li>
+<li><code>translate=True</code> → Traducción (en <code>Char</code>, <code>Text</code>, <code>Html</code>, etc.).</li>
+<li><code>size=NN</code> → Longitud máxima (principalmente <code>Char</code>).</li>
+<li><code>digits=(precision, escala)</code> → Precisión en <code>Float/Monetary</code>.</li>
+<li><code>currency_field="currency_id"</code> → Campo moneda asociado (<code>Monetary</code>).</li>
+<li><code>domain=[(...)]</code> → Filtrado dinámico en relacionales (UI/ORM).</li>
+<li><code>context={...}</code> → Valores por defecto, comportamiento contexto.</li>
+<li><code>ondelete="restrict|cascade|set null|set default"</code> → Política al eliminar (<code>Many2one</code>).</li>
+<li><code>compute="_method"</code> → Campo computado; combínalo con <code>@api.depends</code>.</li>
+<li><code>inverse="_method"</code> → Acción inversa del compute (cuando procede).</li>
+<li><code>search="_method"</code> → Método de búsqueda personalizada.</li>
+<li><code>store=True</code> → Persistir valor de campo computado/relacionado.</li>
+<li><code>compute_sudo=True</code> → Computar con superusuario (evita problemas de permisos).</li>
+<li><code>selection_add=[(...)]</code> → Extender selecciones existentes.</li>
+<li><code>related="x.y.z"</code> → Campo relacionado.</li>
+<li><code>deprecated="18.0"</code> → Marcar campo como obsoleto (nota para devs).</li>
+</ul>
+<hr />
+<h2 id="5-campos-especiales-reservados-mas-comunes">5) Campos especiales / reservados más comunes</h2>
+<blockquote>
+<p>Odoo crea o usa estos campos con semántica especial. Conviene conocerlos.</p>
+</blockquote>
+<ul>
+<li><code>name</code> (<code>Char</code>) → <strong>“display name”</strong> por defecto; se muestra como identificador del registro.</li>
+<li><code>active</code> (<code>Boolean</code>) → <strong>Archivado</strong>: si <code>False</code>, el registro se oculta de listas por defecto.</li>
+<li><code>sequence</code> (<code>Integer</code>) → Ordenación preferente en vistas/listas.</li>
+<li><code>create_uid</code> (<code>Many2one(res.users)</code>) → Usuario que <strong>creó</strong> el registro.</li>
+<li><code>create_date</code> (<code>Datetime</code>) → Fecha/hora de <strong>creación</strong>.</li>
+<li><code>write_uid</code> (<code>Many2one(res.users)</code>) → Último usuario que <strong>modificó</strong>.</li>
+<li><code>write_date</code> (<code>Datetime</code>) → Fecha/hora de la <strong>última modificación</strong>.</li>
+<li><code>company_id</code> (<code>Many2one(res.company)</code>) → Compañía del registro (multiempresa).</li>
+<li><code>display_name</code> (<code>Char</code>, compute) → Nombre mostrado (puede combinar varios campos).</li>
+</ul>
+<p><strong>Notas</strong>:
+- Los cuatro campos de auditoría (<code>create_uid</code>, <code>create_date</code>, <code>write_uid</code>, <code>write_date</code>) se manejan <strong>automáticamente</strong> por el ORM.
+- <code>active</code> agrega el filtro “Incluir archivados” en la UI cuando existe en el modelo.
+- <code>name_get</code> / <code>name_search</code> permiten personalizar el <strong>display name</strong> y la búsqueda rápida.</p>
+<hr />
+<h2 id="6-ejemplo-compacto-de-modelo-con-varios-tipos">6) Ejemplo compacto de modelo con varios tipos</h2>
+<pre><code class="language-python">from odoo import api, fields, models
+
+class Task(models.Model):
+    _name = &quot;demo.task&quot;
+    _description = &quot;Demo Task&quot;
+
+    # Básicos
+    name = fields.Char(required=True, index=True)
+    description = fields.Text()
+    is_done = fields.Boolean(default=False)
+    deadline = fields.Date()
+    planned_at = fields.Datetime()
+
+    # Números
+    hours = fields.Float(digits=(16, 2))
+    currency_id = fields.Many2one(&quot;res.currency&quot;)
+    amount = fields.Monetary(currency_field=&quot;currency_id&quot;, digits=(16, 2))
+
+    # Media y HTML
+    image = fields.Image(max_width=256, max_height=256)
+    notes_html = fields.Html()
+
+    # Relacionales
+    partner_id = fields.Many2one(&quot;res.partner&quot;, ondelete=&quot;set null&quot;, index=True)
+    tag_ids = fields.Many2many(&quot;demo.tag&quot;, string=&quot;Etiquetas&quot;)
+
+    # Computados y relacionados
+    partner_country = fields.Many2one(
+        related=&quot;partner_id.country_id&quot;, store=True, readonly=True
+    )
+
+    # Archivado
+    active = fields.Boolean(default=True)
+
+    # Computado con depends
+    effective = fields.Float(compute=&quot;_compute_effective&quot;, store=True)
+
+    @api.depends(&quot;hours&quot;, &quot;is_done&quot;)
+    def _compute_effective(self):
+        for rec in self:
+            rec.effective = rec.hours if rec.is_done else 0.0
+</code></pre>
+<hr />
+<h2 id="7-consejos-rapidos">7) Consejos rápidos</h2>
+<ul>
+<li>Define <code>index=True</code> en campos usados en dominios/filtros frecuentes.</li>
+<li>Usa <code>ondelete="set null"</code> en <code>Many2one</code> salvo que necesites bloquear (<code>restrict</code>) o arrastrar (<code>cascade</code>).</li>
+<li>En <code>Monetary</code>, <strong>SIEMPRE</strong> define el <code>currency_field</code>.</li>
+<li>En campos computados con <code>store=True</code>, no olvides las dependencias con <code>@api.depends</code>.</li>
+<li>Para grandes textos, <code>Text</code> o <code>Html</code>; para pequeñas etiquetas, <code>Char</code> con <code>size</code>.</li>
+<li><code>selection_add</code> es la forma limpia de extender <code>Selection</code> de otro módulo.</li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/infodatos/webymvc/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>🌐 Interfaz web en Odoo 18 y patrón MVC - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../datosodoo/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../intro/arquitecturaerp/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#interfaz-web-en-odoo-18-y-patron-mvc" class="nav-link">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#odoo-y-el-patron-mvc" class="nav-link">Odoo y el patrón MVC</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#tipos-de-vistas-en-odoo" class="nav-link">Tipos de vistas en Odoo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#menus-y-navegacion" class="nav-link">Menús y navegación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#acciones-iractionsact_window" class="nav-link">Acciones: ir.actions.act_window</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#modo-desarrollador-y-menu-tecnico" class="nav-link">Modo desarrollador y menú técnico</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#relacion-entre-mvc-y-la-interfaz" class="nav-link">Relación entre MVC y la interfaz</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividades" class="nav-link">📌 Actividades</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="interfaz-web-en-odoo-18-y-patron-mvc">🌐 Interfaz web en Odoo 18 y patrón MVC</h1>
+<p>En este apartado vamos a ver cómo funciona la <strong>interfaz web</strong> de Odoo, su arquitectura <strong>MVC</strong>, los tipos de vistas, la definición de acciones y cómo inspeccionar modelos con el <strong>modo desarrollador</strong>.</p>
+<hr />
+<h2 id="odoo-y-el-patron-mvc">Odoo y el patrón MVC</h2>
+<p>Odoo sigue una arquitectura <strong><a href="https://en.wikipedia.org/wiki/Model–view–controller">MVC (Modelo–Vista–Controlador)</a></strong> adaptada a su framework propio.</p>
+<ul>
+<li>
+<p><strong>Modelo (Model)</strong>  </p>
+<ul>
+<li>Definido en <strong>Python</strong> en la carpeta <code>models/</code> de un módulo.</li>
+<li>Corresponde a una <strong>tabla en PostgreSQL</strong> (ej. modelo <code>res.partner</code> → tabla <code>res_partner</code>).</li>
+<li>Contiene la lógica de negocio y la estructura de datos (campos, relaciones, restricciones, métodos).</li>
+</ul>
+</li>
+<li>
+<p><strong>Vista (View)</strong>  </p>
+<ul>
+<li>Definida en <strong>archivos XML</strong> en la carpeta <code>views/</code> de un módulo.</li>
+<li>Describe cómo se muestran los datos del modelo: formularios, listas, kanban, calendarios, etc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Controlador (Controller)</strong>  </p>
+<ul>
+<li>Definido en <strong>Python</strong> en la carpeta <code>controllers/</code>.</li>
+<li>Gestiona la lógica de las rutas web, APIs, control de flujos y lógica de backend para la interfaz.</li>
+</ul>
+</li>
+</ul>
+<p>Estructura de una app en Odoo:</p>
+<pre><code class="language-bash">app/
+├─ __init__.py
+├─ __manifest__.py
+├─ controllers/
+│  ├─ __init__.py
+│  └─ controllers.py      # Controladores web (C del MVC)
+├─ models/
+│  ├─ __init__.py
+│  └─ models.py           # Modelos ORM (M del MVC)
+├─ views/
+│  └─ templates.xml       # Vistas/plantillas (V del MVC, QWeb/XML)
+└─ static/
+   └─ description/
+      ├─ icon.png
+      └─ index.html
+</code></pre>
+<hr />
+<h2 id="tipos-de-vistas-en-odoo">Tipos de vistas en Odoo</h2>
+<p>En Odoo, cada vista se define como un elemento XML (<code>&lt;form&gt;</code>, <code>&lt;list&gt;</code>, <code>&lt;kanban&gt;</code>, <code>&lt;calendar&gt;</code>, etc.) vinculado a un modelo.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Tipo</strong></th>
+<th><strong>Etiqueta XML</strong></th>
+<th><strong>Descripción</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lista</strong></td>
+<td><code>&lt;list&gt;</code></td>
+<td>Vista tabular de varios registros</td>
+</tr>
+<tr>
+<td><strong>Formulario</strong></td>
+<td><code>&lt;form&gt;</code></td>
+<td>Vista detallada de un solo registro</td>
+</tr>
+<tr>
+<td><strong>Kanban</strong></td>
+<td><code>&lt;kanban&gt;</code></td>
+<td>Vista en tarjetas con columnas (flujo visual)</td>
+</tr>
+<tr>
+<td><strong>Calendario</strong></td>
+<td><code>&lt;calendar&gt;</code></td>
+<td>Vista de eventos/fechas</td>
+</tr>
+<tr>
+<td><strong>Gráfico</strong></td>
+<td><code>&lt;graph&gt;</code></td>
+<td>Visualización de datos en gráficos</td>
+</tr>
+<tr>
+<td><strong>Pivot</strong></td>
+<td><code>&lt;pivot&gt;</code></td>
+<td>Análisis dinámico con tablas dinámicas</td>
+</tr>
+<tr>
+<td><strong>Gantt</strong></td>
+<td><code>&lt;gantt&gt;</code></td>
+<td>Gestión visual de proyectos y tareas</td>
+</tr>
+<tr>
+<td><strong>Mapa</strong></td>
+<td><code>&lt;map&gt;</code></td>
+<td>Ubicación geográfica de registros</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="menus-y-navegacion">Menús y navegación</h2>
+<p>Los menús de Odoo también se definen en XML con <code>&lt;menuitem&gt;</code>.<br />
+Hay <strong>tres niveles</strong> típicos:</p>
+<ol>
+<li><strong>Menú principal</strong> (nivel superior) → ejemplo: <em>Ventas</em>, <em>Inventario</em>.</li>
+<li><strong>Submenú</strong> → agrupa funcionalidades dentro de un módulo.</li>
+<li><strong>Acción de menú</strong> → ejecuta una acción (<code>ir.actions.*</code>) que abre una vista o lista.</li>
+</ol>
+<p>Ejemplo de definición en XML:</p>
+<pre><code class="language-xml">&lt;menuitem id=&quot;menu_sales_main&quot; name=&quot;Ventas&quot;/&gt;
+&lt;menuitem id=&quot;menu_orders&quot; name=&quot;Pedidos&quot; parent=&quot;menu_sales_main&quot; action=&quot;action_sale_order&quot;/&gt;
+</code></pre>
+<hr />
+<h2 id="acciones-iractionsact_window">Acciones: <code>ir.actions.act_window</code></h2>
+<p>Las acciones definen <strong>qué modelo abrir, con qué vistas y en qué modo</strong>.</p>
+<ul>
+<li>Se guardan en la tabla <code>ir_actions_act_window</code>.</li>
+<li>En XML:</li>
+</ul>
+<pre><code class="language-xml">&lt;record id=&quot;action_sale_order&quot; model=&quot;ir.actions.act_window&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;Pedidos de Venta&lt;/field&gt;
+    &lt;field name=&quot;res_model&quot;&gt;sale.order&lt;/field&gt;
+    &lt;field name=&quot;view_mode&quot;&gt;list,form&lt;/field&gt;
+&lt;/record&gt;
+</code></pre>
+<p><strong>Campos clave:</strong>
+- <code>name</code> → Nombre mostrado.
+- <code>res_model</code> → Modelo asociado.
+- <code>view_mode</code> → Tipos de vista y orden de apertura (<code>list,form</code>, <code>kanban,form</code>, etc.).</p>
+<hr />
+<h2 id="modo-desarrollador-y-menu-tecnico">Modo desarrollador y menú técnico</h2>
+<p>Para explorar modelos, campos y vistas en Odoo:</p>
+<ol>
+<li><strong>Activar modo desarrollador</strong>  <ul>
+<li>Ir a <strong>Ajustes</strong>.</li>
+<li>Abajo a la derecha: clic en <em>Activar el modo desarrollador</em> (o añadir <code>?debug=1</code> a la URL).</li>
+</ul>
+</li>
+</ol>
+<figure markdown="span">
+  !["Modo desarrollador"](images/webymvc_02.png){width="100%" }
+  <figcaption>Modo desarrollador</figcaption>
+</figure>
+
+<ol>
+<li><strong>Usar el menú técnico</strong> (solo visible con modo desarrollador activo):<ul>
+<li><strong>Modelos</strong>: <code>Configuración → Técnico → Modelos</code> → ver estructura, campos y relaciones.</li>
+<li><strong>Vistas</strong>: <code>Configuración → Técnico → Vistas</code> → inspeccionar XML y personalizar.</li>
+<li><strong>Acciones</strong>: <code>Configuración → Técnico → Acciones de Ventana</code> → ver y editar <code>ir.actions.act_window</code>.</li>
+<li><strong>Menús</strong>: <code>Configuración → Técnico → Menús</code>.</li>
+</ul>
+</li>
+</ol>
+<figure markdown="span">
+  !["Menú técnico"](images/webymvc_01.png){width="100%" }
+  <figcaption>Menú técnico</figcaption>
+</figure>
+
+<hr />
+<h2 id="relacion-entre-mvc-y-la-interfaz">Relación entre MVC y la interfaz</h2>
+<p>Ejemplo: Abrir la vista de contactos.</p>
+<ol>
+<li><strong>Menú</strong> → <em>Contactos</em> (<code>&lt;menuitem&gt;</code> que lanza una acción).</li>
+<li><strong>Acción</strong> (<code>ir.actions.act_window</code>) → <code>res_model="res.partner"</code> y <code>view_mode="kanban,form"</code>.</li>
+<li><strong>Vistas XML</strong> → <code>&lt;kanban&gt;</code> y <code>&lt;form&gt;</code> definidas para <code>res.partner</code>.</li>
+<li><strong>Modelo</strong> (<code>res.partner</code>) → Tabla <code>res_partner</code> en PostgreSQL.</li>
+<li><strong>Controlador</strong> (si aplica) → Si es una página personalizada, un controlador gestiona la ruta <code>/odoo/contacts</code>.</li>
+</ol>
+<hr />
+<h2 id="actividades">📌 Actividades</h2>
+<h3 id="actividad-1-explora-un-modelo-respartner">🔎 Actividad 1 — Explora un Modelo (res.partner)</h3>
+<p><strong>Objetivo:</strong> Comprender cómo un <strong>modelo</strong> define estructura de datos y relaciones.</p>
+<ol>
+<li>Abre <strong>Contactos</strong> y selecciona cualquier contacto.</li>
+<li>Haz clic en el <strong>depurador</strong> (🐞) → <strong>Ver campos</strong> / <strong>Ver modelo</strong>.</li>
+<li>Anota:<ul>
+<li>Nombre técnico del modelo (<strong><code>res.partner</code></strong>).</li>
+<li>Tabla PostgreSQL asociada (<strong><code>res_partner</code></strong>).</li>
+<li>5 campos clave (nombre, email, phone, company_type, parent_id) y su <strong>tipo</strong> (Char, Many2one, etc.).</li>
+<li>2 campos relacionales y el modelo al que apuntan.</li>
+</ul>
+</li>
+<li>(<em>Opcional</em>) Verifica en PostgreSQL: consulta <code>SELECT * FROM res_partner LIMIT 1;</code> y comprueba columnas y tipos.</li>
+</ol>
+<p><strong>Entregable:</strong> Ficha del modelo con captura de la lista de campos y relaciones.</p>
+<hr />
+<h3 id="actividad-2-localiza-y-lee-las-vistas-listformkanban">🧱 Actividad 2 — Localiza y lee las Vistas (list/form/kanban)</h3>
+<p><strong>Objetivo:</strong> Ubicar las <strong>vistas XML</strong> que dibujan la UI de un modelo.</p>
+<ol>
+<li>En Contactos, abre el <strong>depurador</strong> → <strong>Ver vista</strong>.</li>
+<li>Identifica el <strong>tipo de vista</strong> en uso (p. ej., <code>form</code> o <code>kanban</code>).</li>
+<li>Desde <strong>Menú Técnico → Vistas</strong>, busca por <strong>Modelo = res.partner</strong>.</li>
+<li>Localiza:<ul>
+<li>Una vista <strong>form</strong> y una vista <strong>list</strong> (lista).</li>
+<li>Su <strong>ID externo</strong> (ej. <code>base.view_partner_form</code>).</li>
+<li>El archivo/fuente (módulo) al que pertenecen.</li>
+</ul>
+</li>
+<li>Lee el <strong>XML</strong> (campo <em>Arquitectura</em>). Localiza 3 campos y 1 botón (ej. <code>name</code>, <code>email</code>, <code>phone</code>, botón <code>action_archive</code>).</li>
+</ol>
+<p><strong>Entregable:</strong> Tabla con: <em>vista</em>, <em>tipo</em>, <em>ID externo</em>, <em>módulo</em>, <em>3 campos visibles</em>.</p>
+<hr />
+<h3 id="actividad-3-rastrea-el-menu-y-su-jerarquia">🧭 Actividad 3 — Rastrea el Menú y su Jerarquía</h3>
+<p><strong>Objetivo:</strong> Entender cómo se construyen los <strong>menús</strong> que llevan a modelos/vistas.</p>
+<ol>
+<li>Ve a <strong>Menú Técnico → Interfaz de Usuario → Menús</strong>.</li>
+<li>Busca el menú que te lleva a <strong>Contactos</strong> (puedes filtrar por <em>Nombre contiene “Contactos”</em>).</li>
+<li>Anota:<ul>
+<li><code>Nombre</code>, <code>ID externo</code>, <code>Padre</code> (jerarquía) y <strong>Acción</strong> asociada (si tiene).</li>
+</ul>
+</li>
+<li>Dibuja la <strong>jerarquía</strong>: <em>Aplicación</em> → <em>Submenú</em> → <em>Elemento que ejecuta acción</em>.</li>
+<li>Repite el ejercicio con <strong>Ventas → Pedidos</strong> (si el módulo está instalado).</li>
+</ol>
+<p><strong>Entregable:</strong> Diagrama simple (texto) de la jerarquía de menús para <em>Contactos</em> y <em>Ventas → Pedidos</em>.</p>
+<hr />
+<h3 id="actividad-4-acciones-de-ventana-iractionsact_window">🚪 Actividad 4 — Acciones de Ventana (<code>ir.actions.act_window</code>)</h3>
+<p><strong>Objetivo:</strong> Ver cómo una <strong>acción</strong> decide qué modelo abrir y con qué vistas.</p>
+<ol>
+<li>Abre <strong>Menú Técnico → Acciones → Acciones de Ventana</strong>.</li>
+<li>Busca la acción que abre <strong>Contactos</strong>.</li>
+<li>Anota:<ul>
+<li><code>name</code>, <code>res_model</code>, <code>view_mode</code> (ej. <code>kanban,form</code>), <code>domain</code> (si aplica).</li>
+<li>Vistas específicas vinculadas en la pestaña <strong>Vistas</strong> (si hay orden forzado).</li>
+</ul>
+</li>
+<li>Cambia a <strong>Ventas → Pedidos</strong> y repite con el modelo <code>sale.order</code>.</li>
+</ol>
+<p><strong>Entregable:</strong> Ficha de dos acciones con campos clave y captura de la pestaña <strong>Vistas</strong>.</p>
+<hr />
+<p>📌 <strong>Enlaces útiles</strong>:</p>
+<ul>
+<li><a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/views.html">Documentación de vistas en Odoo</a></li>
+<li><a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/actions.html">Documentación de acciones en Odoo</a></li>
+<li><a href="https://www.odoo.com/documentation/18.0/applications/general/developer_mode.html">Documentación del modo desarrollador</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

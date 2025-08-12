@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/modulos/moduloserp/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Módulos de un ERP - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../instmoderp/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../tutpython/tutpython/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#modulos-de-un-erp" class="nav-link">Módulos de un ERP</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#tipologia-descripcion-e-interconexionado" class="nav-link">Tipología, descripción e interconexionado</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad" class="nav-link">📝 Actividad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="modulos-de-un-erp">Módulos de un ERP</h1>
+<p>Las funciones de un ERP vienen definidas en los distintos módulos que podemos instalar.</p>
+<blockquote>
+<p>Un módulo es un software que contiene los elementos y datos necesarios para añadir alguna funcionalidad a la aplicación.</p>
+</blockquote>
+<p>Distinguimos diferentes tipos de módulos:</p>
+<ul>
+<li>
+<p><strong>Módulos adicionales</strong><br />
+  Se instalan después (desde el mismo programa ERP o desde la web del ERP).</p>
+</li>
+<li>
+<p><strong>Módulo base</strong><br />
+  Se carga automáticamente desde la instalación inicial del sistema.</p>
+</li>
+</ul>
+<p>Entre las características más importantes de los módulos funcionales de un ERP destacaremos las siguientes:</p>
+<p>!!! info "Características de los ERPs"
+    - Instalación y desinstalación mediante asistentes.
+    - Poder configurar o parametrizar los módulos para que se puedan adaptar al entorno de producción.
+    - Incorporar niveles de seguridad: por ello algunos módulos solo estarán accesibles para el administrador
+    - Los módulos están interconectados y así la información que se introduce se comparte entre ellos, - evitando introducirla más de una vez. 
+    - Posibilita la inclusión de comentarios y otros textos en las opciones de la aplicación que implementa.
+    - Los menús generados por los módulos se pueden adaptar a las necesidades de los diferentes usuarios.</p>
+<hr />
+<h2 id="tipologia-descripcion-e-interconexionado">Tipología, descripción e interconexionado</h2>
+<h3 id="a-modulo-base">A. Módulo Base</h3>
+<p>Hay un módulo o conjunto de módulos base que son necesarios para que funcione la aplicación. Tenemos un elemento base y alrededor del mismo podemos establecer otros tipos de módulos adicionales, pero estos no se instalan con la aplicación, solo se instalan si son necesarios para el funcionamiento o la empresa.</p>
+<p><strong>Funciones del módulo base:</strong>
+- Nos permite configurar la aplicación.
+- Permite la gestión de los datos maestros. Estos datos son los elementos básicos para que funcione el ERP.
+- Permite establecer un idioma como predeterminado o importar traducciones.
+- Permite establecer la seguridad con la gestión de usuarios y los accesos a la aplicación.
+- Permite administrar otros módulos. Podemos instalar nuevos módulos o eliminarlos de la aplicación.</p>
+<p>En nuestro caso, el módulo base de <strong>Odoo</strong> solo incorpora dos módulos:<br />
+- <strong>Empresas</strong> (que es una Ficha de Cliente)<br />
+- <strong>Administración</strong>, que permite añadir más funcionalidades a la aplicación con la instalación de nuevos módulos.</p>
+<hr />
+<h3 id="b-gestion-contable-y-financiera">B. Gestión contable y financiera</h3>
+<p>El módulo de Contabilidad automatiza todas aquellas operaciones que están relacionadas con los procesos contables de la empresa, permitiendo así tener todos estos datos centralizados.</p>
+<p>La contabilidad financiera se relaciona con los módulos de <strong>Compras</strong> y <strong>Ventas</strong>, para evitar duplicidad en la información.<br />
+De esta manera podemos emitir facturas a clientes o de proveedores sin necesidad de introducir los datos dos veces.</p>
+<p>El módulo de Contabilidad debe relacionarse también con el módulo de <strong>Tesorería</strong> para mantener un control sobre el estado financiero global de la empresa.<br />
+Por ejemplo, si un cliente no ha pagado una factura dentro del plazo establecido, se puede bloquear su cuenta hasta que este pago sea realizado.</p>
+<p><strong>Funciones más interesantes:</strong>
+- La modularidad y flexibilidad es muy interesante, ya que los ERP disponen de módulos de contabilidad adaptados al Plan General Contable del país donde se implante.
+- Permite el idioma e introducción del plan del país donde se implante.</p>
+<p><strong>Contabilidad analítica / módulos:</strong>
+- Gestión de impuestos
+- Presupuestos
+- Facturas de clientes y proveedores
+- Estados financieros (Cuentas, balances, sumas y saldos)</p>
+<hr />
+<h3 id="c-compras-ventas-y-almacen">C. Compras, ventas y almacén</h3>
+<p>El módulo de <strong>Compras</strong> trata todas aquellas operaciones relacionadas con el proceso de compra: presupuestos de proveedores, precios, creación de pedidos de compra, etc.</p>
+<p><strong>Características del Módulo Compras:</strong></p>
+<ul>
+<li>Seguimiento de tarifas de proveedores</li>
+<li>Gestión de entregas parciales del proveedor</li>
+<li>Gestión de reclamaciones a proveedores</li>
+<li>Generación automática de borradores de pedidos de compra</li>
+</ul>
+<p>Igual que se realiza una gestión de compras, también hace falta una <strong>gestión de las ventas</strong> de la compañía.<br />
+La forma de trabajar es similar al módulo de Compras, con la diferencia de que nos referimos a documentos de venta.<br />
+Entre sus funcionalidades destacan las siguientes:</p>
+<hr />
+<p><strong>Características del Módulo Ventas:</strong></p>
+<ul>
+<li>Creación de pedidos de venta.</li>
+<li>Revisión de los pedidos en sus diferentes estados.</li>
+<li>Confirmación del envío.</li>
+<li>Definir formas de pago: contado, transferencia, etc., diferenciando estas por pedido y por fecha de facturación.</li>
+<li>Gestionar y calcular todos los gastos generados por el envío de los pedidos.</li>
+<li>Albaranes automáticos desde pedidos.</li>
+<li>Un pedido equivale a un albarán. El pedido puede dividirse en partes, cada una con su albarán parcial (se desglosa y se unifica en la factura).</li>
+</ul>
+<hr />
+<p><strong>Características del Módulo Almacén:</strong></p>
+<p><strong>Características del módulo:</strong></p>
+<ul>
+<li>Definición de múltiples almacenes.</li>
+<li>Control del stock y la rotación de inventario.</li>
+<li>Traspasos entre almacenes.</li>
+<li>Codificación y numeración de productos de forma personalizada.</li>
+<li>Definición de compras de un producto a diferentes proveedores.</li>
+</ul>
+<hr />
+<h3 id="d-modulo-de-facturacion">D. Módulo de Facturación</h3>
+<p><strong>Funcionalidades del módulo:</strong></p>
+<ul>
+<li>Configuración de formas de pago: contado, transferencia, etc., diferenciadas por pedido y fecha de facturación.</li>
+<li>Facturas automáticas desde pedidos o albaranes.</li>
+<li>Generación automática desde el cobro o pago.</li>
+<li>Gestión de recibos, órdenes de pago y transferencias.</li>
+<li>Integración con extractos bancarios.</li>
+<li>Envío telemático de datos de remesas al banco.</li>
+</ul>
+<hr />
+<h3 id="e-modulo-de-gestion-personal">E. Módulo de Gestión Personal</h3>
+<p>Este módulo se encarga de todas las gestiones relacionadas con los trabajadores:</p>
+<ul>
+<li>Realización de nóminas.</li>
+<li>Altas y bajas de contratos.</li>
+<li>Control de horarios y días festivos.</li>
+<li>Gestión del sistema de remuneraciones.</li>
+<li>Pago a empleados, incluyendo comisiones por ventas realizadas en un periodo de tiempo.</li>
+</ul>
+<p><strong>Funcionalidades del módulo de Gestión de Personal</strong></p>
+<ul>
+<li>Gestión de empleados y calendario de vacaciones.</li>
+<li>Gestión de contratos de empleados.</li>
+<li>Gestión de beneficios.</li>
+<li>Gestión de ausencias.</li>
+<li>Gestión de producción y rendimiento.</li>
+<li>Gestión de perfiles y responsabilidades.</li>
+</ul>
+<p>Cada uno de estos módulos puede ser ampliado con la instalación de módulos adicionales.<br />
+En ocasiones, la aplicación no dispone de un módulo de RRHH como tal, de forma que la gestión del personal se lleva a cabo introduciendo conceptos contables relacionados, y la gestión de las comisiones se realiza a través del módulo Comercial.</p>
+<hr />
+<h3 id="f-relaciones-con-clientes">F. Relaciones con clientes</h3>
+<p><strong>CRM</strong> (<em>Customer Relationship Management</em>, o <em>Gestión de las relaciones con los clientes</em>) es una aplicación que permite centralizar en una única base todas las interacciones entre la empresa y sus clientes.</p>
+<p>El CRM recopila toda la información de las gestiones comerciales con los clientes, manteniendo un histórico detallado.<br />
+De esta forma, el CRM dispone de gran conocimiento sobre cada cliente y posibilita entender sus necesidades y anticiparse a ellas.</p>
+<p>Por otra parte, el CRM permite dirigir y gestionar de forma sencilla las campañas de captación y fidelización de clientes, controlando el conjunto de acciones realizadas sobre los actuales y potenciales, para poder realizar acciones concretas dirigidas al cliente adecuado en el momento adecuado.</p>
+<p>Las empresas que utilizan CRM disponen de la información necesaria para ofrecer un servicio de atención al cliente diferenciado, acorde a las necesidades y expectativas actuales del mercado.</p>
+<p><strong>Ejemplo:</strong><br />
+Openbravo incluye funcionalidad CRM dentro de los módulos de Ventas y Facturación, pero puede integrarse en otro ERP de modo independiente, como <strong>SugarCRM</strong>.</p>
+<p>Los sistemas ERP pueden incluir funcionalidades con todas las características del CRM, pero para poder desarrollar nuevos módulos es necesario adaptarse a nuevas tendencias y acceder a la instalación del CRM.</p>
+<hr />
+<p><strong>Funcionalidades del módulo CRM</strong></p>
+<ul>
+<li>Datos identificativos del contacto.</li>
+<li>Segmentación de contactos en función de múltiples criterios.</li>
+<li>Determinación del ciclo de clientes reales y potenciales.</li>
+<li>Seguimiento de oportunidades de negocio.</li>
+<li>Registro de actividades comerciales realizadas en la interacción cliente-empresa:</li>
+<li>Planificación y ejecución de campañas de marketing.</li>
+<li>Seguimiento de resultados comerciales.</li>
+<li>Sincronización con la fuerza de ventas.</li>
+</ul>
+<p>Incluye herramientas de análisis para determinar qué documentos enviar en cada momento (ofertas, presupuestos), mensajes SMS, estadísticas diversas, etc.</p>
+<h2 id="actividad">📝 Actividad</h2>
+<p>!!! Question "Instalación de Odoo"
+    1. Investiga los diferentes módulos de Odoo que hemos visto y dónde encontramos.
+    2. ¿Hay algún otro módulo?</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

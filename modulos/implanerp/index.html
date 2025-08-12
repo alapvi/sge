@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/modulos/implanerp/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>📦 Implantación de un ERP con Odoo - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../modelos/basicfields/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../instmoderp/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#implantacion-de-un-erp-con-odoo" class="nav-link">📦 Implantación de un ERP con Odoo</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#estudio-del-mercado" class="nav-link">🔍 Estudio del Mercado</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#seleccion-del-erp" class="nav-link">✅ Selección del ERP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fase-de-implantacion" class="nav-link">⚙️ Fase de Implantación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#fase-de-puesta-en-marcha" class="nav-link">🚀 Fase de Puesta en Marcha</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cierre-del-proyecto" class="nav-link">🔚 Cierre del Proyecto</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#seleccion-de-modulos-segun-necesidades" class="nav-link">🧩 Selección de Módulos según Necesidades</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configuracion-y-personalizacion-del-erp" class="nav-link">🛠️ Configuración y Personalización del ERP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad" class="nav-link">📘 Actividad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="implantacion-de-un-erp-con-odoo">📦 Implantación de un ERP con Odoo</h1>
+<p>Este documento describe en detalle las fases de un proyecto de implantación de un ERP (Enterprise Resource Planning), tomando como referencia la plataforma <strong>Odoo</strong>. Se incluyen ejemplos prácticos, recomendaciones y buenas prácticas.</p>
+<hr />
+<h2 id="estudio-del-mercado">🔍 Estudio del Mercado</h2>
+<h3 id="objetivo">Objetivo</h3>
+<p>Analizar las soluciones ERP existentes y evaluar cuál se adapta mejor a las necesidades de la empresa.</p>
+<h3 id="factores-a-evaluar">Factores a evaluar</h3>
+<ul>
+<li>Coste total de propiedad (licencia, mantenimiento, personalización)</li>
+<li>Código abierto vs. propietario</li>
+<li>Escalabilidad</li>
+<li>Comunidad y soporte técnico</li>
+</ul>
+<h3 id="comparativa-basica">Comparativa básica</h3>
+<table>
+<thead>
+<tr>
+<th>ERP</th>
+<th>Licencia</th>
+<th>Comunidad</th>
+<th>Personalización</th>
+<th>Coste inicial</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Odoo</td>
+<td>Libre (Community) / Comercial (Enterprise)</td>
+<td>Alta</td>
+<td>Muy Alta</td>
+<td>Bajo</td>
+</tr>
+<tr>
+<td>SAP Business One</td>
+<td>Comercial</td>
+<td>Alta</td>
+<td>Media</td>
+<td>Alto</td>
+</tr>
+<tr>
+<td>Microsoft Dynamics</td>
+<td>Comercial</td>
+<td>Media</td>
+<td>Alta</td>
+<td>Medio</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo práctico:</strong> Una PYME con necesidades básicas de contabilidad, CRM y ventas opta por <strong>Odoo Community</strong>, por ser económico y flexible.</p>
+<hr />
+<h2 id="seleccion-del-erp">✅ Selección del ERP</h2>
+<h3 id="reunion-con-stakeholders">Reunión con stakeholders</h3>
+<p>Identificar los procesos clave y puntos de dolor actuales.</p>
+<h3 id="requisitos-funcionales-y-tecnicos">Requisitos funcionales y técnicos</h3>
+<ul>
+<li>Multiempresa / multiusuario</li>
+<li>Gestión de inventario</li>
+<li>Facturación electrónica</li>
+<li>Integraciones con plataformas externas (por ejemplo, e-commerce)</li>
+</ul>
+<hr />
+<h2 id="fase-de-implantacion">⚙️ Fase de Implantación</h2>
+<h3 id="planificacion-del-proyecto">Planificación del proyecto</h3>
+<ul>
+<li>Asignación de roles: consultor, administrador, usuarios clave</li>
+<li>Calendario de implantación (metodología ágil recomendada)</li>
+</ul>
+<h3 id="instalacion-tecnica">Instalación técnica</h3>
+<ul>
+<li>Entorno de pruebas y producción (Docker, servidores, nube)</li>
+<li>Base de datos PostgreSQL + Odoo</li>
+</ul>
+<h3 id="formacion-inicial">Formación inicial</h3>
+<ul>
+<li>Sesiones por departamentos (Ventas, Almacén, Administración)</li>
+<li>Manuales básicos de uso de Odoo</li>
+</ul>
+<p><strong>Ejemplo:</strong> Se crea un entorno de pruebas con Odoo y se carga una muestra de clientes y productos.</p>
+<hr />
+<h2 id="fase-de-puesta-en-marcha">🚀 Fase de Puesta en Marcha</h2>
+<h3 id="migracion-de-datos">Migración de datos</h3>
+<ul>
+<li>Importación de clientes, productos, proveedores, facturas</li>
+<li>Odoo permite importar desde Excel o CSV</li>
+</ul>
+<h3 id="validacion-de-procesos">Validación de procesos</h3>
+<ul>
+<li>Validación de ventas: cotización &gt; pedido &gt; albarán &gt; factura</li>
+<li>Validación de almacén: entrada &gt; ubicación &gt; salida</li>
+</ul>
+<h3 id="soporte-post-lanzamiento">Soporte post-lanzamiento</h3>
+<ul>
+<li>Resolución de errores y ajustes de configuración</li>
+<li>Monitorización de logs y rendimiento</li>
+</ul>
+<p><strong>Ejemplo:</strong> Se detecta que los albaranes no se generan correctamente y se ajusta el flujo de entrega en Odoo.</p>
+<hr />
+<h2 id="cierre-del-proyecto">🔚 Cierre del Proyecto</h2>
+<h3 id="documentacion">Documentación</h3>
+<ul>
+<li>Manual de uso por departamentos</li>
+<li>Documentación técnica: configuración, módulos instalados</li>
+</ul>
+<h3 id="evaluacion">Evaluación</h3>
+<ul>
+<li>Encuesta de satisfacción a usuarios</li>
+<li>Informe de lecciones aprendidas</li>
+</ul>
+<p><strong>Ejemplo:</strong> El cliente solicita incluir KPIs de ventas semanales y se incorpora un dashboard con Odoo Studio.</p>
+<hr />
+<h2 id="seleccion-de-modulos-segun-necesidades">🧩 Selección de Módulos según Necesidades</h2>
+<table>
+<thead>
+<tr>
+<th>Departamento</th>
+<th>Módulo Odoo</th>
+<th>Funcionalidad principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ventas</td>
+<td><code>sale_management</code></td>
+<td>Presupuestos, pedidos, clientes</td>
+</tr>
+<tr>
+<td>Compras</td>
+<td><code>purchase</code></td>
+<td>Órdenes de compra, proveedores</td>
+</tr>
+<tr>
+<td>Almacén</td>
+<td><code>stock</code></td>
+<td>Control de inventario y ubicaciones</td>
+</tr>
+<tr>
+<td>Contabilidad</td>
+<td><code>account</code></td>
+<td>Facturación, asientos, impuestos</td>
+</tr>
+<tr>
+<td>CRM</td>
+<td><code>crm</code></td>
+<td>Gestión de oportunidades y clientes</td>
+</tr>
+<tr>
+<td>Recursos Humanos</td>
+<td><code>hr</code></td>
+<td>Empleados, ausencias, nóminas</td>
+</tr>
+<tr>
+<td>Fabricación</td>
+<td><code>mrp</code></td>
+<td>Órdenes de fabricación, rutas, listas materiales</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ejemplo:</strong> Una empresa sin fabricación activa puede prescindir del módulo <code>mrp</code> inicialmente.</p>
+<hr />
+<h2 id="configuracion-y-personalizacion-del-erp">🛠️ Configuración y Personalización del ERP</h2>
+<h3 id="creacion-de-empresa-y-usuarios">Creación de empresa y usuarios</h3>
+<ul>
+<li>Configurar multicompañía si es necesario</li>
+<li>Asignación de roles: gerente, usuario, contable</li>
+</ul>
+<h3 id="personalizacion-visual">Personalización visual</h3>
+<ul>
+<li>Logos, plantillas de facturas y presupuestos</li>
+<li>Traducción de interfaz al español</li>
+</ul>
+<h3 id="personalizacion-funcional">Personalización funcional</h3>
+<ul>
+<li>Crear campos personalizados con Odoo Studio</li>
+<li>Automatización de flujos con reglas y acciones programadas</li>
+</ul>
+<h3 id="desarrollo-personalizado-avanzado">Desarrollo personalizado (avanzado)</h3>
+<ul>
+<li>Crear nuevos módulos con <code>odoo scaffold</code></li>
+<li>Modificar vistas, modelos y controladores</li>
+</ul>
+<pre><code class="language-bash">docker exec -it odoo odoo scaffold gestion_eventos /mnt/extra-addons
+</code></pre>
+<p><strong>Ejemplo:</strong> Se desarrolla un módulo a medida para gestionar eventos internos de la empresa con inscripción de empleados.</p>
+<hr />
+<h2 id="actividad">📘  Actividad</h2>
+<p>!!! Question "Implantación de Odoo"
+    📘 Actividad 1: Análisis y planificación de implantación de Odoo en una empresa ficticia.</p>
+<pre><code>**Objetivo**: Simular un proyecto real de implantación de Odoo, desde el análisis de necesidades hasta la propuesta de módulos y personalizaciones.
+
+**Instrucciones**:
+
+1. En grupos de 3-4 personas, diseñad una empresa ficticia con al menos:
+    - Nombre
+    - Sector de actividad (ej. comercio electrónico, logística, fabricación, servicios, etc.)
+    - Número de empleados
+    - Procesos clave a digitalizar
+    - Elaborad un documento que contenga:
+    - Análisis de necesidades
+    - Selección justificada de módulos de Odoo (mínimo 4)
+    - Propuesta de calendario de implantación (fases)
+1. Presentad la propuesta en clase con apoyo visual (diapositivas, mural o infografía).
+</code></pre></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

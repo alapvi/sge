@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/apps/addmenu/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Añadir acción de ventana y menús para task_model (sin vistas aún) - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../addlogic/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../createmodel/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#anadir-accion-de-ventana-y-menus-para-task_model-sin-vistas-aun" class="nav-link">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#prerrequisitos" class="nav-link">Prerrequisitos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#crear-menus" class="nav-link">Crear menús</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anadir-el-xml-al-__manifest__py" class="nav-link">Añadir el XML al __manifest__.py</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actualizar-el-modulo" class="nav-link">Actualizar el módulo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#verificar-desde-la-ui" class="nav-link">Verificar desde la UI</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad" class="nav-link">📝 Actividad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="anadir-accion-de-ventana-y-menus-para-task_model-sin-vistas-aun">Añadir <strong>acción de ventana</strong> y <strong>menús</strong> para <code>task_model</code> (sin vistas aún)</h1>
+<p>En este paso vamos a <strong>abrir el modelo desde la UI</strong> creando:
+- una <strong>acción de ventana</strong> (<code>ir.actions.act_window</code>) que apunte a <code>task_model</code>, y
+- dos <strong>menús</strong> (uno raíz y otro hijo) que disparen esa acción.</p>
+<blockquote>
+<p><strong>Nota:</strong> No definiremos todavía vistas <code>&lt;list&gt;</code> ni <code>&lt;form&gt;</code>. Odoo es capaz de <strong>generar vistas básicas por defecto</strong> cuando no existen vistas específicas para un modelo. En el siguiente paso crearemos nuestras vistas personalizadas.</p>
+</blockquote>
+<hr />
+<h2 id="prerrequisitos">Prerrequisitos</h2>
+<ul>
+<li>Módulo <code>task_app</code> instalado o visible en <em>Apps</em>.</li>
+<li>Modelo del paso anterior creado e importado:</li>
+<li>Modelo: <strong><code>task_model</code></strong> con campos <code>name</code>, <code>description</code>, <code>is_done</code>.</li>
+</ul>
+<p>Estructura mínima:</p>
+<pre><code>task_app/
+├─ __init__.py
+├─ __manifest__.py
+├─ models/
+│  ├─ __init__.py
+│  └─ task_model.py
+└─ views/
+</code></pre>
+<p>Crea la carpeta <code>views/</code> si no existe.</p>
+<hr />
+<h2 id="crear-menus">Crear menús</h2>
+<p>Archivo: <strong><code>task_app/views/task_menus_action.xml</code></strong></p>
+<pre><code class="language-xml">&lt;odoo&gt;
+  &lt;!-- Acción de ventana: abre el modelo task_app.task_model --&gt;
+  &lt;record id=&quot;action_task_model&quot; model=&quot;ir.actions.act_window&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;Tasks&lt;/field&gt;
+    &lt;field name=&quot;res_model&quot;&gt;task_app.task_model&lt;/field&gt;
+    &lt;!-- Importante en Odoo 18: usar list/form (no tree) --&gt;
+    &lt;field name=&quot;view_mode&quot;&gt;list,form&lt;/field&gt;
+    &lt;!-- Opcional: ayuda cuando no hay registros aún --&gt;
+    &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;
+      &lt;p class=&quot;o_view_nocontent_smiling_face&quot;&gt;
+        Crea tu primera tarea
+      &lt;/p&gt;
+    &lt;/field&gt;
+  &lt;/record&gt;
+
+  &lt;!-- Menú raíz de la app (puedes renombrar a tu gusto) --&gt;
+  &lt;menuitem id=&quot;menu_task_root&quot; name=&quot;Task App&quot; sequence=&quot;10&quot;/&gt;
+
+  &lt;!-- Menú que dispara la acción --&gt;
+  &lt;menuitem id=&quot;menu_task_model&quot;
+            name=&quot;Tasks&quot;
+            parent=&quot;menu_task_root&quot;
+            action=&quot;action_task_model&quot;
+            sequence=&quot;10&quot;/&gt;
+&lt;/odoo&gt;
+</code></pre>
+<blockquote>
+<p><em>Consejo:</em> usa IDs claros y estables (<code>action_task_model</code>, <code>menu_task_root</code>, <code>menu_task_model</code>) para facilitar futuras herencias/extensiones.</p>
+</blockquote>
+<hr />
+<h2 id="anadir-el-xml-al-__manifest__py">Añadir el XML al <code>__manifest__.py</code></h2>
+<p>Edita <strong><code>task_app/__manifest__.py</code></strong> y añade el archivo en la clave <code>data</code> (mantén primero seguridad cuando la tengas):</p>
+<pre><code class="language-python">&quot;data&quot;: [
+    # &quot;security/ir.model.access.csv&quot;,   # (lo añadiremos en un paso posterior)
+    &quot;views/task_menus_actions.xml&quot;,
+],
+</code></pre>
+<blockquote>
+<p>Si ya tenías <code>data: []</code>, simplemente inserta la ruta tal cual. Evita listar ficheros que <strong>no existan</strong>.</p>
+</blockquote>
+<hr />
+<h2 id="actualizar-el-modulo">Actualizar el módulo</h2>
+<h3 id="opcion-a-interfaz">Opción A — Interfaz</h3>
+<ol>
+<li><strong>Ajustes → Activar Modo desarrollador</strong>.</li>
+<li><strong>Apps → Actualizar lista de aplicaciones</strong>.</li>
+<li><strong>Actualizar</strong> (o <strong>Instalar</strong>) el módulo <code>task_app</code>.</li>
+</ol>
+<h3 id="opcion-b-docker-cli">Opción B — Docker (CLI)</h3>
+<p>Con contenedores <code>web</code> (Odoo) y <code>db</code> (PostgreSQL), ejecuta:</p>
+<pre><code class="language-bash">docker exec -it odoo18_web_1 sh -lc '
+  odoo \
+    --db_host=db \
+    --db_port=5432 \
+    --db_user=odoo \
+    --db_password=&quot;$(cat /run/secrets/postgresql_password)&quot; \
+    --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons \
+    -d odoodb -u task_app --stop-after-init
+'
+</code></pre>
+<blockquote>
+<p>Usa <code>--stop-after-init</code> para evitar el error “Port 8069 in use” si el servidor ya está activo en el contenedor.</p>
+</blockquote>
+<hr />
+<h2 id="verificar-desde-la-ui">Verificar desde la UI</h2>
+<ol>
+<li>Abre <strong>Task App → Tasks</strong> (el menú que acabamos de crear).</li>
+<li>Deberías poder entrar y ver una <strong>lista generada por defecto</strong> (Odoo 18) y, al abrir un registro, un <strong>formulario básico</strong>.</li>
+<li>Si no ves el menú:</li>
+<li>Comprueba que el módulo está <strong>actualizado</strong> sin errores.</li>
+<li>Activa Modo desarrollador y revisa en <strong>Ajustes → Técnico → Acciones de Ventana</strong> que existe <strong><code>action_task_model</code></strong> (res_model = <code>task_model</code>).</li>
+<li>Revisa en <strong>Ajustes → Técnico → Menús</strong> que existen <strong><code>menu_task_root</code></strong> y <strong><code>menu_task_model</code></strong>.</li>
+</ol>
+<blockquote>
+<p><strong>Permisos:</strong> si no eres <em>Administrador</em>, podrías necesitar accesos en <code>security/ir.model.access.csv</code> para que los usuarios internos creen/lean tareas. Lo añadiremos más adelante.</p>
+</blockquote>
+<hr />
+<h2 id="actividad">📝 Actividad</h2>
+<p>!!! Question "Crear menús"
+    1. Crea un menú para acceder al modelo task_model</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

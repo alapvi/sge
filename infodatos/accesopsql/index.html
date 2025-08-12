@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/infodatos/accesopsql/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>📂 Acceso a la Base de Datos PostgreSQL - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../apps/searchviews/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../datosodoo/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#acceso-a-la-base-de-datos-postgresql" class="nav-link">📂 Acceso a la Base de Datos PostgreSQL</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#acceso-a-postgresql-en-un-contenedor-docker" class="nav-link">🐳 Acceso a PostgreSQL en un contenedor Docker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#configuracion-del-fichero-pg_hbaconf" class="nav-link">⚙️ Configuración del fichero pg_hba.conf</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#iniciar-shell-de-psql" class="nav-link">💻 Iniciar shell de psql</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#comandos-basicos-de-psql" class="nav-link">📜 Comandos básicos de psql</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#acceso-a-la-base-de-datos-de-odoo" class="nav-link">📂 Acceso a la base de datos de Odoo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#conexion-a-postgresql-desde-visual-studio-code" class="nav-link">🖥️ Conexión a PostgreSQL desde Visual Studio Code</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad" class="nav-link">📘 Actividad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="acceso-a-la-base-de-datos-postgresql">📂 Acceso a la Base de Datos PostgreSQL</h1>
+<p>Vamos a ver cómo acceder a la base de datos <strong>PostgreSQL</strong> usada por Odoo cuando se ejecuta en un contenedor Docker, cómo configurar <code>pg_hba.conf</code>, y cómo explorar las tablas más importantes.</p>
+<hr />
+<h2 id="acceso-a-postgresql-en-un-contenedor-docker">🐳 Acceso a PostgreSQL en un contenedor Docker</h2>
+<p>Si tienes Odoo y PostgreSQL ejecutándose en contenedores separados, el acceso a la base de datos se hace conectándote directamente al contenedor de PostgreSQL.</p>
+<h3 id="conexion-al-contenedor-de-postgresql">🔧 Conexión al contenedor de PostgreSQL</h3>
+<pre><code class="language-bash">docker exec -it nombre_contenedor_postgres bash
+psql -U odoo -d nombre_base_datos
+</code></pre>
+<ul>
+<li><code>nombre_contenedor_postgres</code> → Nombre del contenedor PostgreSQL.</li>
+<li><code>odoo</code> → Usuario de base de datos por defecto creado por la imagen Docker.</li>
+<li><code>nombre_base_datos</code> → Nombre de la base de datos de tu instancia Odoo.</li>
+</ul>
+<p>Ejemplo para listar todas las bases de datos:</p>
+<pre><code class="language-bash">psql -U odoo -l
+</code></pre>
+<figure markdown="span">
+  !["Listado de BD en PostgreSQL"](images/accesoPSQL_01.png){width="100%" }
+  <figcaption>Listado de BD en PostgreSQL</figcaption>
+</figure>
+
+<hr />
+<h2 id="configuracion-del-fichero-pg_hbaconf">⚙️ Configuración del fichero <code>pg_hba.conf</code></h2>
+<p>El archivo <code>pg_hba.conf</code> (ubicado normalmente en <code>/var/lib/postgresql/data/pgdata/</code>) controla <strong>qué usuarios</strong> pueden conectarse, <strong>desde qué direcciones</strong> y con <strong>qué métodos de autenticación</strong>.</p>
+<p>Formato general de las entradas:</p>
+<pre><code># TYPE  DATABASE        USER            ADDRESS                 METHOD
+host    all             all             0.0.0.0/0               md5
+</code></pre>
+<figure markdown="span">
+  !["Configuración a PostgreSQL"](images/accesoPSQL_02.png){width="100%" }
+  <figcaption>Configurar acceso a PostgreSQL</figcaption>
+</figure>
+
+<ul>
+<li><strong>TYPE</strong> → <code>local</code> (socket UNIX) o <code>host</code> (TCP/IP).</li>
+<li><strong>DATABASE</strong> → Base de datos específica o <code>all</code> para todas.</li>
+<li><strong>USER</strong> → Usuario permitido.</li>
+<li><strong>ADDRESS</strong> → IP o rango permitido (ej. <code>192.168.1.0/24</code>).</li>
+<li><strong>METHOD</strong> → Método de autenticación (<code>trust</code>, <code>md5</code>, <code>scram-sha-256</code>…).</li>
+</ul>
+<p>💡 Para permitir conexiones remotas, cambia <code>listen_addresses</code> en <code>postgresql.conf</code> a:</p>
+<pre><code>listen_addresses = '*'
+</code></pre>
+<p>Y en <code>pg_hba.conf</code>, añade:</p>
+<pre><code>host    all    all    0.0.0.0/0    md5
+</code></pre>
+<figure markdown="span">
+  !["Configuración acceso a PostgreSQL"](images/accesoPSQL_03.png){width="100%" }
+  <figcaption>Configurar acceso remoto a PostgreSQL</figcaption>
+</figure>
+
+<blockquote>
+<p>⚠️ Recuerda reiniciar PostgreSQL tras cambios:</p>
+</blockquote>
+<pre><code class="language-bash">docker restart nombre_contenedor_postgres
+</code></pre>
+<hr />
+<h2 id="iniciar-shell-de-psql">💻 Iniciar shell de <code>psql</code></h2>
+<p>Dentro del contenedor PostgreSQL, abre la shell con:</p>
+<pre><code class="language-bash">psql -h &lt;servidor-postgresql&gt; -p &lt;port&gt; -U odoo -d nombre_base_datos
+</code></pre>
+<p>Para salir de la shell de <code>psql</code>:</p>
+<pre><code class="language-sql">\q
+</code></pre>
+<hr />
+<h2 id="comandos-basicos-de-psql">📜 Comandos básicos de <code>psql</code></h2>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>\l</code></td>
+<td>Lista todas las bases de datos</td>
+</tr>
+<tr>
+<td><code>\c nombre_db</code></td>
+<td>Conectarse a una base de datos</td>
+</tr>
+<tr>
+<td><code>\dt</code></td>
+<td>Lista las tablas disponibles</td>
+</tr>
+<tr>
+<td><code>\d nombre_tabla</code></td>
+<td>Muestra estructura de una tabla</td>
+</tr>
+<tr>
+<td><code>\q</code></td>
+<td>Salir de <code>psql</code></td>
+</tr>
+<tr>
+<td><code>SELECT version();</code></td>
+<td>Mostrar versión de PostgreSQL</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="acceso-a-la-base-de-datos-de-odoo">📂 Acceso a la base de datos de Odoo</h2>
+<p>La base de datos de Odoo contiene todas las tablas que representan modelos de negocio.</p>
+<p>Ejemplo de conexión directa:</p>
+<pre><code class="language-bash">psql -U odoo -d miempresa
+</code></pre>
+<h3 id="tablas-mas-importantes-en-odoo">🔍 Tablas más importantes en Odoo</h3>
+<table>
+<thead>
+<tr>
+<th>Tabla</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>res_users</code></td>
+<td>Usuarios del sistema</td>
+</tr>
+<tr>
+<td><code>res_partner</code></td>
+<td>Contactos, clientes y proveedores</td>
+</tr>
+<tr>
+<td><code>sale_order</code></td>
+<td>Pedidos de venta</td>
+</tr>
+<tr>
+<td><code>purchase_order</code></td>
+<td>Pedidos de compra</td>
+</tr>
+<tr>
+<td><code>account_move</code></td>
+<td>Facturas y asientos contables</td>
+</tr>
+<tr>
+<td><code>product_template</code></td>
+<td>Información de productos</td>
+</tr>
+<tr>
+<td><code>ir_model</code></td>
+<td>Modelos internos de Odoo</td>
+</tr>
+<tr>
+<td><code>ir_module_module</code></td>
+<td>Módulos instalados</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ejemplos-de-consultas">📌 Ejemplos de consultas</h3>
+<p>Listar los primeros 5 usuarios:</p>
+<pre><code class="language-sql">SELECT id, login, active FROM res_users LIMIT 5;
+</code></pre>
+<p>Listar clientes:</p>
+<pre><code class="language-sql">SELECT id, name, email FROM res_partner LIMIT 10;
+</code></pre>
+<hr />
+<h2 id="conexion-a-postgresql-desde-visual-studio-code">🖥️ Conexión a PostgreSQL desde Visual Studio Code</h2>
+<p>Puedes conectarte a la base de datos de Odoo usando <strong>Visual Studio Code</strong> con la extensión oficial de PostgreSQL.</p>
+<h3 id="1-instalar-la-extension">1️⃣ Instalar la extensión</h3>
+<ul>
+<li>Abre <strong>Visual Studio Code</strong>.</li>
+<li>Ve a la vista de extensiones (<code>Ctrl+Shift+X</code> o <code>Cmd+Shift+X</code> en Mac).</li>
+<li>Busca <strong>PostgreSQL</strong> e instala la extensión oficial de Microsoft.</li>
+</ul>
+<hr />
+<h3 id="2-obtener-credenciales-de-conexion">2️⃣ Obtener credenciales de conexión</h3>
+<p>En un entorno Docker típico con Odoo y PostgreSQL:
+- <strong>Servidor/Host</strong>: nombre del contenedor PostgreSQL o <code>localhost</code> si expones el puerto.
+- <strong>Puerto</strong>: <code>5432</code> (por defecto).
+- <strong>Usuario</strong>: <code>odoo</code>.
+- <strong>Contraseña</strong>: la definida en la variable <code>POSTGRES_PASSWORD</code> de tu <code>docker-compose.yml</code>.
+- <strong>Base de datos</strong>: nombre de tu base de datos Odoo (por ejemplo, <code>miempresa</code>).</p>
+<p>Si no conoces la contraseña, puedes verla con:</p>
+<pre><code class="language-bash">docker inspect nombre_contenedor_postgres | grep POSTGRES_PASSWORD
+</code></pre>
+<hr />
+<h3 id="3-configurar-conexion-en-vs-code">3️⃣ Configurar conexión en VS Code</h3>
+<ol>
+<li>Presiona <code>Ctrl+Shift+P</code> y escribe <strong>PostgreSQL: New Connection</strong>.</li>
+<li>Introduce los parámetros:</li>
+<li><strong>Server name</strong>: <code>localhost</code> o nombre del contenedor.</li>
+<li><strong>Database name</strong>: <code>miempresa</code>.</li>
+<li><strong>User name</strong>: <code>odoo</code>.</li>
+<li><strong>Password</strong>: tu contraseña.</li>
+<li>
+<p><strong>Port</strong>: <code>5432</code>.</p>
+</li>
+<li>
+<p>Guarda la conexión para acceder rápidamente.</p>
+</li>
+</ol>
+<hr />
+<h3 id="4-ejemplo-de-conexion-desde-vs-code">4️⃣ Ejemplo de conexión desde VS Code</h3>
+<p>Si tienes PostgreSQL expuesto en <code>localhost:5432</code> y tu usuario/contraseña es <code>odoo/odoo123</code>:</p>
+<pre><code>Server: localhost
+Database: miempresa
+User: odoo
+Password: xxxxxx
+Port: 5432
+</code></pre>
+<figure markdown="span">
+  !["Acceso a PostgreSQL desde vscode"](images/accesoPSQL_04.png){width="50%" }
+  <figcaption>Acceso a PostgreSQL desde vscode</figcaption>
+</figure>
+
+<hr />
+<h3 id="5-consultas-rapidas-desde-vs-code">5️⃣ Consultas rápidas desde VS Code</h3>
+<p>Una vez conectado, puedes abrir un archivo <code>.sql</code> y ejecutar consultas con la extensión.<br />
+Ejemplos:</p>
+<pre><code class="language-sql">SELECT id, login FROM res_users;
+SELECT name, email FROM res_partner;
+</code></pre>
+<p>La extensión permite:
+- Navegar por tablas y esquemas.
+- Exportar resultados.
+- Ejecutar scripts SQL completos.</p>
+<hr />
+<p>📚 <strong>Recursos útiles</strong>:
+- <a href="https://www.postgresql.org/docs/">Documentación oficial de PostgreSQL</a>
+- <a href="https://www.odoo.com/documentation/">Documentación de Odoo</a></p>
+<h2 id="actividad">📘  Actividad</h2>
+<p>!!! Question "Acceso a PostgreSQL"
+    - Actividad 1: Accede a postgreSQL a través de la consola.
+    - Actividad 2: Instala la extensión PostgreSQL en vscode y configura el acceso a la BD. </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

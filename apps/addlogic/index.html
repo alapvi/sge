@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/apps/addlogic/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Lógica de negocio - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../addicon/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../addmenu/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#logica-de-negocio" class="nav-link">Lógica de negocio</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#modificar-el-modelo-task_model" class="nav-link">Modificar el modelo task_model</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#anadir-botones-a-la-vista" class="nav-link">Añadir botones a la vista</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actualizar-el-modulo" class="nav-link">Actualizar el módulo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#probar-en-la-interfaz" class="nav-link">Probar en la interfaz</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad" class="nav-link">📝 Actividad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="logica-de-negocio">Lógica de negocio</h1>
+<p>Odoo tiene un campo booleano especial llamado <strong><code>active</code></strong> que se usa para <strong>archivar</strong> o <strong>desarchivar</strong> registros.<br />
+Cuando <code>active=False</code>, el registro sigue existiendo en la base de datos pero <strong>no aparece</strong> en las vistas por defecto.</p>
+<p>📚 <strong>Referencia oficial</strong>:<br />
+- <a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html#common-fields">Documentación Odoo — Campo active</a><br />
+- <a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/views.html#buttons">Documentación Odoo — Botones en vistas</a>  </p>
+<hr />
+<h2 id="modificar-el-modelo-task_model">Modificar el modelo <code>task_model</code></h2>
+<p><strong>Ruta:</strong> <code>task_app/models/task_model.py</code></p>
+<pre><code class="language-python">from odoo import fields, models
+
+class TaskModel(models.Model):
+    _name = &quot;task.model&quot;
+    _description = &quot;Task (basic model)&quot;
+
+    name = fields.Char(string=&quot;Name&quot;, required=True, index=True)
+    description = fields.Text(string=&quot;Description&quot;)
+    is_done = fields.Boolean(string=&quot;Done&quot;, default=False)
+    category_id = fields.Many2one(
+        comodel_name=&quot;category.model&quot;,
+        string=&quot;Category&quot;,
+        ondelete=&quot;set null&quot;,
+        index=True,
+    )
+
+    # Campo especial para activar/desactivar (archivar)
+    active = fields.Boolean(default=True)
+
+    # Método para mover tareas realizadas a histórico
+    def action_archive_done_tasks(self):
+        done_tasks = self.search([('is_done', '=', True), ('active', '=', True),('create_uid', '=', self.env.user.id)])
+        done_tasks.write({'active': False})
+        return True
+
+    # Método para eliminar todas las tareas del histórico
+    def action_delete_archived_tasks(self):
+        archived_tasks = self.search([('active', '=', False),('create_uid', '=', self.env.user.id)])
+        archived_tasks.unlink()
+        return True
+</code></pre>
+<p>📌 <strong>Notas</strong>:</p>
+<ul>
+<li><code>search</code> devuelve un recordset sobre el que podemos hacer <code>write</code> o <code>unlink</code>.  </li>
+<li><code>active=False</code> significa que el registro está archivado, pero no eliminado.  </li>
+</ul>
+<hr />
+<h2 id="anadir-botones-a-la-vista">Añadir botones a la vista</h2>
+<p><strong>Ruta:</strong> <code>task_app/views/task_views.xml</code></p>
+<pre><code class="language-xml">&lt;odoo&gt;
+  &lt;record id=&quot;view_task_model_form&quot; model=&quot;ir.ui.view&quot;&gt;
+    &lt;field name=&quot;name&quot;&gt;task_app.task_model_form&lt;/field&gt;
+    &lt;field name=&quot;model&quot;&gt;task_app.task_model&lt;/field&gt;
+    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;
+      &lt;form string=&quot;Task&quot;&gt;
+        &lt;header&gt;
+          &lt;!-- Botón para archivar todas las tareas realizadas --&gt;
+          &lt;button name=&quot;action_archive_done_tasks&quot;
+                  string=&quot;Mover realizadas a histórico&quot;
+                  type=&quot;object&quot;
+                  class=&quot;btn-primary&quot;
+                  confirm=&quot;¿Estás seguro de que quieres mover tus tareas realizadas al histórico?&quot;/&gt;
+
+          &lt;!-- Botón para eliminar todas las tareas archivadas --&gt;
+          &lt;button name=&quot;action_delete_archived_tasks&quot;
+                  string=&quot;Eliminar histórico&quot;
+                  type=&quot;object&quot;
+                  class=&quot;btn-danger&quot;
+                  confirm=&quot;⚠️ Esta acción eliminará todas tus tareas archivadas. ¿Deseas continuar?&quot;/&gt;
+        &lt;/header&gt;
+
+        &lt;sheet&gt;
+          &lt;group&gt;
+            &lt;group&gt;
+              &lt;field name=&quot;name&quot;/&gt;
+              &lt;field name=&quot;category_id&quot;/&gt;
+              &lt;field name=&quot;is_done&quot;/&gt;
+              &lt;field name=&quot;active&quot;/&gt;
+            &lt;/group&gt;
+            &lt;group&gt;
+              &lt;field name=&quot;description&quot;/&gt;
+            &lt;/group&gt;
+          &lt;/group&gt;
+        &lt;/sheet&gt;
+      &lt;/form&gt;
+    &lt;/field&gt;
+  &lt;/record&gt;
+&lt;/odoo&gt;
+</code></pre>
+<p>📌 <strong>Explicación de atributos</strong>:</p>
+<ul>
+<li><code>name="action_archive_done_tasks"</code> → nombre del método Python que se ejecuta.  </li>
+<li><code>type="object"</code> → indica que se llama a un método del modelo (no es una acción estándar).  </li>
+<li><code>class="btn-primary"</code> / <code>btn-danger</code> → estilos de color para el botón.  </li>
+</ul>
+<hr />
+<h2 id="actualizar-el-modulo">Actualizar el módulo</h2>
+<pre><code class="language-bash">docker exec -it odoo18_web_1 sh -lc '
+  odoo     --db_host=db     --db_port=5432     --db_user=odoo     --db_password=&quot;$(cat /run/secrets/postgresql_password)&quot;     --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons     -d odoodb -u task_app --stop-after-init
+'
+</code></pre>
+<hr />
+<h2 id="probar-en-la-interfaz">Probar en la interfaz</h2>
+<ol>
+<li>Crear varias tareas con <code>is_done=True</code> y <code>is_done=False</code>.  </li>
+<li>Abrir cualquier tarea y pulsar <strong>"Mover realizadas a histórico"</strong>.  </li>
+<li>Comprobar que las realizadas desaparecen de la vista (porque <code>active=False</code>).  </li>
+<li>Pulsar <strong>"Eliminar histórico"</strong> para borrarlas de la base de datos.  </li>
+</ol>
+<figure markdown="span">
+    !["Botones"](images/addlogic_01.png){width="80%" }
+    <figcaption>Botones </figcaption>
+</figure>
+
+<hr />
+<p>!!! tip "<strong>Tip</strong>" 
+    Si quieres permitir ver también las tareas archivadas, activa el filtro <strong>"Incluye archivadas"</strong> en la vista lista (Odoo lo añade automáticamente si existe el campo <code>active</code>).  </p>
+<h2 id="actividad">📝 Actividad</h2>
+<p>!!! Question "Crear botones"
+    1. Añade los botones para mover tareas realizadas al histórico y eliminar del histórico.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

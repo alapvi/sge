@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/tutpython/tutpython/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Python Essentials 1 — NetAcad &amp; Documentación Oficial - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../modulos/moduloserp/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#python-essentials-1-netacad-documentacion-oficial" class="nav-link">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#que-es-python" class="nav-link">¿Qué es Python?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#curso-python-essentials-1-netacad" class="nav-link">Curso Python Essentials 1 — NetAcad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#curso-python-essentials-2-netacad" class="nav-link">Curso Python Essentials 2 — NetAcad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#documentacion-oficial-de-python" class="nav-link">Documentación oficial de Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#recursos-adicionales" class="nav-link">Recursos adicionales</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="python-essentials-1-netacad-documentacion-oficial">Python Essentials 1 — NetAcad &amp; Documentación Oficial</h1>
+<h2 id="que-es-python">¿Qué es Python?</h2>
+<p>Python es un <strong>lenguaje de programación interpretado, de alto nivel y con tipado dinámico</strong>, ampliamente utilizado por su sintaxis clara y legible. Fue creado por <strong>Guido van Rossum</strong> y publicado por primera vez en 1991. </p>
+<p>Características principales:</p>
+<ul>
+<li>Sintaxis sencilla y cercana al lenguaje natural.</li>
+<li>Multiparadigma: soporta programación <strong>orientada a objetos</strong>, <strong>imperativa</strong> y, en menor medida, <strong>funcional</strong>.</li>
+<li>Amplia biblioteca estándar.</li>
+<li>Portabilidad: corre en múltiples plataformas (Windows, macOS, Linux, etc.).</li>
+<li>Gran comunidad y abundante documentación.</li>
+</ul>
+<p>Usos comunes:</p>
+<ul>
+<li>Desarrollo web (Django, Flask)</li>
+<li>Ciencia de datos y Machine Learning (Pandas, NumPy, scikit-learn)</li>
+<li>Automatización de tareas y scripting</li>
+<li>Aplicaciones de escritorio y videojuegos</li>
+<li>Internet de las cosas (IoT)</li>
+</ul>
+<blockquote>
+<p>Más información: <a href="https://docs.python.org/3/">Documentación oficial de Python</a></p>
+</blockquote>
+<hr />
+<h2 id="curso-python-essentials-1-netacad">Curso <strong>Python Essentials 1</strong> — NetAcad</h2>
+<p><strong>Enlace:</strong> <a href="https://www.netacad.com/courses/python-essentials-1?courseLang=en-US">Python Essentials 1 — Cisco Networking Academy</a></p>
+<p>Este curso es una introducción al lenguaje Python, diseñado para personas sin experiencia previa en programación o con conocimientos básicos. Forma parte del itinerario de certificación <strong>PCAP: Certified Associate in Python Programming</strong>.</p>
+<p>Contenido destacado:</p>
+<ul>
+<li>Introducción a la programación y a Python.</li>
+<li>Tipos de datos básicos y variables.</li>
+<li>Operadores y expresiones.</li>
+<li>Estructuras de control de flujo (<code>if</code>, <code>for</code>, <code>while</code>).</li>
+<li>Funciones y módulos.</li>
+<li>Manejo de excepciones.</li>
+<li>Listas, cadenas y otras estructuras de datos.</li>
+</ul>
+<p>El curso incluye ejercicios prácticos y laboratorios en línea que se realizan directamente desde la plataforma de NetAcad.</p>
+<hr />
+<h2 id="curso-python-essentials-2-netacad">Curso <strong>Python Essentials 2</strong> — NetAcad</h2>
+<p><strong>Enlace:</strong> <a href="https://www.netacad.com/courses/python-essentials-2?courseLang=en-US">Python Essentials 2 — Cisco Networking Academy</a></p>
+<p>Este curso continúa y complementa <strong>Python Essentials 1</strong>, introduciendo conceptos de nivel intermedio y avanzados en Python. Su objetivo es profundizar en el lenguaje y preparar al alumnado para desarrollar proyectos más complejos.</p>
+<p>Contenido destacado:
+- Programación orientada a objetos (clases, herencia, encapsulación).
+- Colecciones avanzadas (diccionarios, conjuntos).
+- Manejo de archivos (lectura/escritura).
+- Módulos y paquetes personalizados.
+- Depuración, pruebas unitarias y tratamiento avanzado de errores.
+- Herramientas de gestión y entornos virtuales (como <code>venv</code>).</p>
+<h2 id="documentacion-oficial-de-python">Documentación oficial de Python</h2>
+<p><strong>Enlace:</strong> <a href="https://docs.python.org/3/">https://docs.python.org/3/</a></p>
+<p>La documentación oficial de Python es la fuente principal para aprender y consultar detalles técnicos del lenguaje y su biblioteca estándar. Incluye:
+- <a href="https://docs.python.org/3/tutorial/">Tutorial de Python</a>: guía paso a paso para aprender desde cero.
+- Referencia de la Biblioteca Estándar: módulos y funciones integradas.
+- Documentación de la API de Python.
+- Guías de estilo y mejores prácticas.</p>
+<hr />
+<h2 id="recursos-adicionales">Recursos adicionales</h2>
+<ul>
+<li><a href="https://www.python.org/">Página oficial de Python</a></li>
+<li><a href="https://pythoninstitute.org/">Python Institute</a></li>
+<li><a href="https://github.com/topics/python">Repositorio de ejemplos en GitHub</a></li>
+</ul></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

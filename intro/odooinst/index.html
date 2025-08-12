@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/intro/odooinst/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Instalación de Odoo - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../intro/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../sge/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#instalacion-de-odoo" class="nav-link">Instalación de Odoo</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#linux" class="nav-link">Linux</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#windows" class="nav-link">Windows</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#docker" class="nav-link">Docker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad" class="nav-link">📝 Actividad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="instalacion-de-odoo">Instalación de Odoo</h1>
+<p>Odoo proporciona <a href="https://www.odoo.com/documentation/18.0/es/administration/on_premise/packages.html">paquetes de instalación</a> para:</p>
+<ul>
+<li><strong>Distribuciones Linux basadas en Debian</strong> (Debian, Ubuntu, etc.),</li>
+<li><strong>Distribuciones Linux basadas en RPM</strong> (Fedora, CentOS, RHEL, etc.),</li>
+<li>Y <strong>Windows</strong>, tanto para las ediciones <strong>Community</strong> como <strong>Enterprise</strong>.</li>
+</ul>
+<p>Los paquetes de compilación nocturna de Odoo Community están disponibles en el servidor nocturno con todos los requisitos de dependencias necesarios.</p>
+<blockquote>
+<p>Es posible que sea complicado mantener los paquetes nocturnos al día.</p>
+</blockquote>
+<p>Los paquetes oficiales de Community y Enterprise se pueden descargar desde <a href="https://www.odoo.com/page/download">la página de descargas de Odoo</a>.</p>
+<blockquote>
+<p>Para descargar los paquetes de Enterprise es necesario que haya iniciado sesión como un cliente que paga Odoo de forma local o un partner.</p>
+</blockquote>
+<h2 id="linux">Linux</h2>
+<hr />
+<h3 id="preparar">Preparar</h3>
+<p>Odoo necesita un servidor <strong>PostgreSQL</strong> para ejecutarse correctamente.</p>
+<h3 id="debian-ubuntu">Debian / Ubuntu</h3>
+<p>La configuración predeterminada para el paquete <code>.deb</code> de Odoo está diseñada para usar el servidor PostgreSQL en el <strong>mismo huésped</strong> que la instancia de Odoo.</p>
+<p>Para instalar PostgreSQL, ejecuta:</p>
+<pre><code class="language-bash">sudo apt install postgresql -y
+</code></pre>
+<h3 id="fedora">Fedora</h3>
+<p>(Sigue pasos similares usando <code>dnf</code>, si estás en una distribución basada en RPM).</p>
+<hr />
+<blockquote>
+<p>⚠️ <strong>Advertencia</strong><br />
+<code>wkhtmltopdf</code> no está instalado mediante <code>pip</code> y debe instalarse <strong>manualmente</strong> en la versión <strong>0.12.6</strong> para ser compatible con encabezados y pies de página.<br />
+Consulta esta <a href="https://github.com/odoo/odoo/wiki/wkhtmltopdf">wiki de Odoo sobre wkhtmltopdf</a> para más detalles sobre las versiones compatibles.</p>
+</blockquote>
+<h3 id="repositorio">Repositorio</h3>
+<p>Odoo S.A. ofrece un repositorio que te permite instalar la edición Community ejecutando:</p>
+<pre><code class="language-bash"># Para Debian/Ubuntu:
+wget -q -O - https://nightly.odoo.com/odoo.key | sudo gpg --dearmor -o /usr/share/keyrings/odoo-archive-keyring.gpg
+echo 'deb [signed-by=/usr/share/keyrings/odoo-archive-keyring.gpg] https://nightly.odoo.com/18.0/nightly/deb/ ./' | sudo tee /etc/apt/sources.list.d/odoo.list
+sudo apt-get update &amp;&amp; sudo apt-get install odoo
+
+# Para Fedora/CentOS/RHEL:
+sudo dnf config-manager --add-repo=https://nightly.odoo.com/18.0/nightly/rpm/odoo.repo
+sudo dnf install -y odoo
+sudo systemctl enable odoo
+sudo systemctl start odoo
+</code></pre>
+<p>Usa <code>apt-get upgrade</code> o su equivalente para mantener el sistema actualizado.</p>
+<h3 id="paquete-de-distribucion">Paquete de distribución</h3>
+<p>También puedes descargar paquetes <code>.deb</code> o <code>.rpm</code> desde la página oficial de Odoo (tanto para Community como para Enterprise).</p>
+<p><strong>Notas sobre <code>.deb</code>:</strong></p>
+<ul>
+<li>Soporta <strong>Debian Bookworm (12)</strong> y <strong>Ubuntu Jammy (22.04 LTS)</strong> o versiones posteriores.</li>
+<li>Para instalar desde la terminal como root:</li>
+</ul>
+<pre><code class="language-bash">dpkg -i &lt;ruta_al_paquete.deb&gt;  # Esto puede fallar por dependencias
+apt-get install -f             # Corrige las dependencias faltantes
+dpkg -i &lt;ruta_al_paquete.deb&gt;  # Repite la instalación
+</code></pre>
+<ul>
+<li>Si necesitas exportar a formato XLS y estás en Debian anterior (como Buster) u otra versión antigua de Ubuntu:</li>
+<li>
+<p>Instala manualmente <code>xlwt</code>:</p>
+<p><code>bash
+sudo pip3 install xlwt</code></p>
+</li>
+<li>
+<p>Para Odoo con módulos <code>l10n_mx_edi</code>, si falta <code>num2words</code>, instálalo manualmente:</p>
+<p><code>bash
+sudo pip3 install num2words</code></p>
+</li>
+</ul>
+<p><strong>Notas sobre <code>.rpm</code>:</strong></p>
+<ul>
+<li>Compatible con <strong>Fedora 38</strong>.</li>
+<li>Instalación típica:</li>
+</ul>
+<pre><code class="language-bash">sudo dnf localinstall odoo_18.0.latest.noarch.rpm
+sudo systemctl enable odoo
+sudo systemctl start odoo
+</code></pre>
+<h2 id="windows">Windows</h2>
+<hr />
+<blockquote>
+<p>⚠️ <strong>Advertencia</strong>: el instalador de Windows es práctico para pruebas o uso local por un solo usuario, pero <strong>no se recomienda para producción</strong> debido a varias limitaciones.</p>
+</blockquote>
+<h3 id="pasos-basicos">Pasos básicos:</h3>
+<ol>
+<li>Descarga el instalador desde el servidor <em>nightly</em> (solo Community) o desde la página oficial (Community o Enterprise).</li>
+<li>Ejecuta el archivo descargado.</li>
+<li>En Windows 8 o superior, podrías ver una alerta de seguridad ("Windows protegió tu PC"). Haz clic en <strong>Más información</strong> y luego en <strong>Ejecutar de todas formas</strong>.</li>
+<li>Acepta el aviso de control de cuentas de usuario (UAC).</li>
+<li>Sigue las instrucciones del instalador.</li>
+<li>Al finalizar, <strong>Odoo se inicia automáticamente</strong>.</li>
+</ol>
+<h2 id="docker">Docker</h2>
+<h3 id="descripcion">Descripción</h3>
+<p><a href="https://github.com/docker-library/docs/tree/master/odoo">Esta imagen oficial de Docker</a> ejecuta <a href="https://www.odoo.com/">Odoo</a>, un sistema ERP modular y extensible. Está preparada para ejecutarse en contenedores Docker, con soporte para despliegues simples o en clúster. </p>
+<hr />
+<h3 id="uso-basico-con-docker">Uso básico con Docker</h3>
+<p>Ejemplo de comando para lanzar un contenedor Odoo conectado a un contenedor PostgreSQL:</p>
+<pre><code class="language-bash">docker network create odoo-net
+
+docker run -d --name db --network odoo-net \
+  -e POSTGRES_USER=odoo \
+  -e POSTGRES_PASSWORD=odoo \
+  -e POSTGRES_DB=postgres \
+  postgres:15
+
+docker run -d --name odoo --network odoo-net -p 8069:8069 \
+  -e HOST=db -e USER=odoo -e PASSWORD=odoo \
+  odoo:18.0
+</code></pre>
+<hr />
+<h3 id="uso-con-docker-compose">Uso con Docker Compose</h3>
+<p>La forma recomendada para producción y desarrollo es usar <code>docker-compose</code>.
+Ejemplo de archivo <code>docker-compose.yml</code> para Odoo 18 con PostgreSQL:</p>
+<pre><code class="language-yaml">services:
+  web:
+    image: odoo:18.0
+    depends_on:
+      - db
+    ports:
+      - &quot;8069:8069&quot;
+    volumes:
+      - odoo-web-data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    environment:
+      - PASSWORD_FILE=/run/secrets/postgresql_password
+    secrets:
+      - postgresql_password
+  db:
+    image: postgres:15
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_PASSWORD_FILE=/run/secrets/postgresql_password
+      - POSTGRES_USER=odoo
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - odoo-db-data:/var/lib/postgresql/data/pgdata
+    secrets:
+      - postgresql_password
+volumes:
+  odoo-web-data:
+  odoo-db-data:
+
+secrets:
+  postgresql_password:
+    file: odoo_pg_pass
+</code></pre>
+<h3 id="explicacion-rapida">Explicación rápida:</h3>
+<ul>
+<li><code>db</code>: servicio que ejecuta PostgreSQL con datos persistentes en volumen.</li>
+<li><code>odoo</code>: servicio que ejecuta Odoo, que se conecta a PostgreSQL.</li>
+<li>Los puertos 8069 del contenedor Odoo se exponen en el host para acceso web.</li>
+<li>Montar addons personalizados ubicados en <code>./addons</code>.</li>
+<li>Usar un archivo de configuración personalizado ubicado en <code>.config/odoo.conf</code>.</li>
+<li>Usar volúmenes con nombre para los directorios de datos de Odoo y PostgreSQL.</li>
+<li>Usar un archivo de secrets llamado <code>odoo_pg_pass</code> que contiene la contraseña de PostgreSQL compartida por ambos servicios.</li>
+</ul>
+<h3 id="persistencia-de-datos-y-volumenes">Persistencia de datos y volúmenes</h3>
+<ul>
+<li>Los datos de PostgreSQL se guardan en el volumen <code>odoo-db-data</code>.</li>
+<li>Los datos y configuraciones de Odoo se guardan en el volumen <code>odoo-web-data</code>.</li>
+</ul>
+<p>Esto garantiza que la información persista aunque los contenedores se reinicien o eliminen.</p>
+<h2 id="actividad">📝 Actividad</h2>
+<p>!!! Question "Instalación de Odoo"
+    1. Haz una instalación de Odoo utilizando <code>docker-compose</code>  </p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

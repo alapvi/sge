@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/intro/tiposinst/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Tiposinst - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../sge/" class="dropdown-item">Sge</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../sge/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../vscode/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#tipos-de-licencias" class="nav-link">Tipos de licencias</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#a-el-software-libre-en-el-mercado-de-los-erp" class="nav-link">A. El software libre en el mercado de los ERP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#pasos-previos-a-la-instalacion" class="nav-link">Pasos previos a la instalación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#tipos-de-instalacion" class="nav-link">Tipos de instalación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#formas-de-trabajar" class="nav-link">Formas de trabajar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="tipos-de-licencias">Tipos de licencias</h2>
+<p>Actualmente hay un gran número de aplicaciones que pueden ser utilizadas por las empresas. Todas ellas llevan un determinado tipo de licencia. Por otra parte, han proliferado un gran número de tipos de licencias de software. En consecuencia, tenemos que poder reconocer la licencia que acompaña a cada software y cuáles son sus implicaciones.</p>
+<p><strong>IMPORTANTE</strong></p>
+<p>Según indica la Real Academia Española, una licencia es una "autorización que se concede para explotar con fines industriales o comerciales una patente, marca o derecho". En el caso del software, una licencia permite el uso con el consentimiento del autor e implica una serie de derechos y deberes.</p>
+<p>A causa de que los derechos y deberes que los autores pueden asignar a sus obras son de varios tipos, han aparecido gran número de tipos de licencias que, básicamente, podemos clasificar en dos grandes grupos:</p>
+<ul>
+<li><strong>Software privativo</strong></li>
+<li><strong>Software libre</strong></li>
+</ul>
+<p>El <strong>software libre</strong> (<em>free software</em>) es aquel que permite al usuario el uso total del producto adquirido. El <strong>software privativo</strong> es aquel que no lo es.</p>
+<h2 id="a-el-software-libre-en-el-mercado-de-los-erp">A. El software libre en el mercado de los ERP</h2>
+<p>El software privativo ha sido generado y gestionado por grandes empresas (proveedores). Se paga por las licencias de uso, los costes de implantación, la adaptación del ERP a la empresa y las actualizaciones/correcciones/errores. Esto se garantiza mediante un contrato de mantenimiento (económicamente elevado), que garantiza al cliente la reparación de errores en el software y las actualizaciones periódicas.</p>
+<p>El software libre, por el contrario, implica la implementación anual por el usuario; o bien contratando o colaborando por las horas trabajadas. No se paga licencia y para las actualizaciones no hay una garantía como tal; sino que la comunidad desarrolladora repara el error o actualiza la versión en un plazo no determinado. El usuario es el encargado de estar atento si quiere tener el sistema actualizado.</p>
+<p><strong>Ventajas del software libre:</strong></p>
+<ul>
+<li>Software y actualizaciones gratis.</li>
+<li>Gran cantidad de información de fácil acceso en foros y comunidades de usuarios.</li>
+<li>Gran cantidad de aplicaciones ERP.</li>
+</ul>
+<h3 id="algunos-ejemplos">Algunos ejemplos</h3>
+<p><strong>Openbravo</strong></p>
+<p>Es una iniciativa de origen español. Aunque Openbravo se considere como software libre, su modelo de negocio incluye:</p>
+<ul>
+<li>Parte abierta</li>
+<li>Parte de módulos de pago</li>
+<li>Otros licenciados con licencia <strong>OBPL</strong> (<em>Openbravo Public License</em>)</li>
+<li>El resto de módulos tienen licencia <strong>OBCL</strong> (<em>Openbravo Commercial License</em>), y para ser instalados se debe realizar el pago de una suscripción.</li>
+</ul>
+<p><strong>Odoo</strong></p>
+<p>De origen Belga, se caracteriza por tener una amplia variedad de módulos. Presenta dos versiones: <em>Odoo Community</em> [código abierto] y <em>Odoo Enterprise</em> [con licencia]. </p>
+<h2 id="pasos-previos-a-la-instalacion">Pasos previos a la instalación</h2>
+<p>Aunque depende del sistema operativo y del tipo de instalación elegida, las tareas para instalar y configurar el ERP son, en resumen, las siguientes:</p>
+<ul>
+<li><strong>Diseñar la instalación</strong>: antes de instalar, debemos realizar un estudio de las necesidades de la empresa y plantear cómo las va a resolver la aplicación ERP: tablas que necesitamos adaptar, datos, formularios e informes necesarios, etc.</li>
+<li><strong>Instalación de equipos</strong>: es imprescindible la instalación, revisión y/o actualización del hardware de la empresa donde se va a instalar, de manera que se cumplan los requisitos mínimos necesarios. Algunas veces, la empresa puede decidir contratar los servicios externos y acceder así a los recursos remotos.</li>
+<li><strong>Instalación del software</strong>: además del ERP, deberemos instalar todo aquel software necesario para el correcto funcionamiento del sistema.</li>
+<li><strong>Adaptar y configurar el programa</strong>: una vez instalada la aplicación, debemos configurar y adaptar el software a la empresa cliente.</li>
+<li><strong>Migrar los datos</strong>: este es uno de los pasos más importantes ya que los datos de la empresa son necesarios para su correcto funcionamiento; debemos migrar datos de clientes y proveedores; la contabilidad; facturación; etc.</li>
+<li><strong>Realizar pruebas</strong>: habrá que realizar pruebas para comprobar que el ERP funciona correctamente y que los resultados son satisfactorios.</li>
+<li><strong>Documentar el sistema</strong>: se deben crear manuales y documentar todos los procesos realizados.</li>
+<li><strong>Formar a los usuarios</strong>: se debe formar a los usuarios para que utilicen el ERP; normalmente se realiza una formación inicial para responsables del proyecto y otra para usuarios finales.</li>
+</ul>
+<h2 id="tipos-de-instalacion">Tipos de instalación</h2>
+<p>El tipo de instalación del ERP/CRM dependerá de la plataforma en la que lo instalemos y del ERP que vayamos a utilizar. Los más habituales son los siguientes:</p>
+<h3 id="tipos-de-instalacion-erpcrm">Tipos de instalación ERP/CRM</h3>
+<p><strong>Instalación mediante máquina virtual</strong></p>
+<p>Tanto la aplicación como todos los programas necesarios para el funcionamiento del ERP se proporcionan en una máquina virtual que está lista para ser ejecutada. Esta opción no es apta para un entorno en producción y normalmente se utiliza para hacer una primera evaluación del producto.</p>
+<p><strong>Instalación de paquetes en entorno gráfico</strong></p>
+<p>En este caso utilizamos el entorno gráfico del sistema operativo para instalar la aplicación y hacemos uso de los asistentes que instalan y resuelven las dependencias entre los paquetes. Normalmente este tipo de instalación se suele utilizar en entornos de producción.</p>
+<p><strong>Instalación personalizada</strong></p>
+<p>Para instalar una versión más reciente de la aplicación, podemos descargarnos los paquetes fuente desde la página web que los contenga, e instalar el ERP mediante comandos. Esta opción permite controlar los programas que instalaremos y sus dependencias, aunque suele ser un proceso más complejo que la instalación en entorno gráfico.</p>
+<p><strong>No instalar o acceder a la aplicación en línea</strong></p>
+<p>Algunos ERP permiten acceder a demostraciones online de sus productos; de esta forma no instalamos nada, nos conectamos a un servidor de Internet que ya tiene todos los datos de la aplicación. Normalmente esta opción la utilizan los proveedores de ERP que ofrecen el servicio SaaS.</p>
+<h3 id="tipos-de-instalacion-odoo">Tipos de instalación Odoo</h3>
+<p><strong>Instalación mediante máquina virtual</strong><br />
+Simplemente pondremos en funcionamiento una imagen de Odoo sobre <em>una máquina virtual</em> o sobre <em>Docker</em>.</p>
+<p><strong>Instalación de paquetes en entorno gráfico</strong><br />
+Utilizamos el entorno gráfico del sistema operativo para instalar la aplicación y hacemos uso de los asistentes que instalan y resuelven las dependencias entre los paquetes.<br />
+Podemos utilizar cualquier sistema operativo, libre o con licencia. Para los usuarios no expertos, podríamos utilizar un sistema Windows actual y seguir los pasos de la instalación. Este tipo de instalación no requiere muchos conocimientos previos.<br />
+Podemos descargar Odoo desde su página web. Encontrarás el link en la sección <em>Enlaces de descarga</em> de esta unidad.</p>
+<p><strong>Instalación personalizada</strong><br />
+Este es el tipo de instalación que utilizaremos. Nos centraremos en la preparación y posterior instalación paso a paso.</p>
+<p><strong>No instalar o acceder a la aplicación en línea</strong><br />
+Para tener una idea rápida de Odoo, hay instancias de demostración disponibles. Son instancias compartidas que solo viven unas pocas horas y que se pueden usar para navegar y probar cosas sin compromiso.<br />
+Las instancias de demostración no requieren instalación local, solo un navegador web.<br />
+El SaaS debe ir acompañado con una instancia privada e ilimitada pero gratis.<br />
+Se puede usar para descubrir y probar las aplicaciones personalizadas sin código (es decir, incompatible con módulos personalizados o con la Tienda de aplicaciones de Odoo) y sin tener que instalarlo localmente.<br />
+Puede usarse tanto para prueba como para uso profesional a largo plazo.<br />
+Tal y como pasa en las instancias demo de demostración, las instancias SaaS tampoco requieren instalación local.<br />
+Tenemos acceso a ella en la sección <em>trial</em>, en la web de Odoo.</p>
+<hr />
+<h2 id="formas-de-trabajar">Formas de trabajar</h2>
+<p>Los ERP pueden trabajar de dos maneras:</p>
+<ul>
+<li>Desde uno o varios ordenadores en red mediante una aplicación web con un navegador para conectar el ERP (como Odoo).</li>
+<li>Desde un servidor de la empresa al que se puede acceder a través de Internet o desde una intranet (solo desde cualquier terminal interno).</li>
+</ul>
+<p>Debemos indicar en cada caso al servidor al que nos vamos a conectar. Hay dos opciones:</p>
+<p><strong>Monousuario</strong><br />
+La base de datos y la aplicación están alojadas en el mismo equipo, adyacente a sí mismo directamente.<br />
+En este caso nos conectamos directamente indicando <code>localhost</code>, refiriéndonos al equipo donde tenemos instalado nuestro ERP.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

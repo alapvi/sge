@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://alapvi.github.io/sge/intro/sge/">
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Sge - Sistemas de Gestión Empresarial</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Presentación</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../infodatos/accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/datosodoo/" class="dropdown-item">📚 Relación de tablas y modelos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../infodatos/webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
+</li>
+                                    
+<li>
+    <a href="../intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
+</li>
+                                    
+<li>
+    <a href="../odooinst/" class="dropdown-item">Instalación de Odoo</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Sge</a>
+</li>
+                                    
+<li>
+    <a href="../tiposinst/" class="dropdown-item">Tiposinst</a>
+</li>
+                                    
+<li>
+    <a href="../vscode/" class="dropdown-item">Visual Studio Code</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
+</li>
+                                    
+<li>
+    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../odooinst/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../tiposinst/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="2"><a href="#concepto-de-sistema-de-gestion-empresarial" class="nav-link">Concepto de sistema de gestión empresarial</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#concepto-erp" class="nav-link">Concepto ERP</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="2"><a href="#caracteristicas-ventajas-y-desventajas" class="nav-link">Características, ventajas y desventajas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h2 id="concepto-de-sistema-de-gestion-empresarial">Concepto de sistema de gestión empresarial</h2>
+<p>Un sistema de gestión empresarial es un sistema informático formado por aplicaciones que se encargan de las operaciones internas más importantes de una empresa como, por ejemplo: operaciones relacionadas con producción, pedidos, gastos, ventas, clientes, nóminas o inventarios, entre muchas otras.</p>
+<p>Los principales tipos de aplicaciones para la gestión empresarial son los siguientes:</p>
+<h3 id="erp-enterprise-resource-planning">ERP (Enterprise Resource Planning)</h3>
+<p>Constituyen el software de gestión empresarial por excelencia. Este programa integra y maneja múltiples tareas relacionadas con la producción y la distribución.</p>
+<h3 id="crm-customer-relationship-management">CRM (Customer Relationship Management)</h3>
+<p>Es otro gran sistema de gestión empresarial en la actualidad. Se trata de una herramienta enfocada a la gestión de las ventas y la atención a los clientes.</p>
+<h3 id="srm-supplier-relationship-management">SRM (Supplier Relationship Management)</h3>
+<p>Este software trabaja con la finalidad de mejorar el contacto con los proveedores y compartir una metodología de trabajo que afiance las relaciones comerciales.</p>
+<h3 id="bi-business-intelligence">BI (Business Intelligence)</h3>
+<p>La inteligencia empresarial es un software creado para estructurar en información útil todos los datos que genera una organización, ya sean provenientes de las transacciones que se realice o de las campañas de marketing que lleve a cabo.</p>
+<h2 id="concepto-erp">Concepto ERP</h2>
+<p>ERP, <em>Enterprise Resource Planning</em>, [en castellano significa Planificación De Recursos Empresariales].</p>
+<p>La finalidad en un sistema planificación es reducir el ciclo productivo, el tiempo de respuesta y los costes. Otra finalidad sería optimizar las comunicaciones entre las partes implicadas, también mejorar la manipulación de activos.</p>
+<p>El ERP permite a las empresas controlar todos los flujos de información que se generan en cada ámbito de la organización, como consecuencia de integrar todos sus departamentos.</p>
+<p>!!! tip "Importante"
+    Los ERP ofrecen soluciones integradas por módulos o funcionalidades que permiten centralizar toda la información de la empresa en una base de datos única y segura.
+    La evolución del ERP ha proporcionado a las empresas diversos beneficios:</p>
+<pre><code>- Unificación de procesos
+- Organización mediante estadísticas dinámicas
+- Relacionar la información de manera eficiente para el proceso de análisis y decisión
+- Optimización de procesos empresariales
+- Acceso a información fiable, precisa y oportuna
+- Permite compartir información con todo el personal de los diversos departamentos de la organización
+- Eliminación de datos y operaciones innecesarias
+- Reducción de tiempo y costes en los procesos
+</code></pre>
+<p>Actualmente, los ERP integran todos los procesos internos y externos de la gestión, cubriendo las necesidades de las pymes y de las grandes empresas. Un ERP necesita gestionar:</p>
+<ul>
+<li>Procesos de comercio electrónico</li>
+<li>Clientes (CRM)</li>
+<li>Suministros (SCM)</li>
+<li>Relaciones con proveedores</li>
+<li>Inteligencia empresarial</li>
+<li>Base de conocimiento</li>
+<li>Interacciones con clientes</li>
+<li>Ciclo de vida del producto (PLM)</li>
+</ul>
+<h3 id="concepto-de-crm">Concepto de CRM</h3>
+<p>Un CRM (<em>Customer Relationship Management</em>, o <em>Gestión de las Relaciones con los Clientes</em>) es una aplicación que permite centralizar en una única base de datos todas las interacciones entre la empresa y sus clientes.</p>
+<p>Es un sistema de información que responde mejor a todos los requerimientos de la empresa con sus clientes. Incorpora todos los mecanismos necesarios para establecer relaciones satisfactorias y duraderas con los clientes.</p>
+<p>Está formado por dos partes muy diferenciadas:</p>
+<ul>
+<li>Una que se encarga de la lógica operacional (realizar tareas)</li>
+<li>Otra que se encarga de la lógica analítica (analizar la información existente y obtener un beneficio o utilidad)</li>
+</ul>
+<p>En un CRM se registra la información de los clientes/contactos, a nivel individual y de organización, así como sus interacciones. En función del segmento se puede utilizar con fines de marketing, comerciales, operacionales, etc.</p>
+<p>Un CRM acostumbra a servir de apoyo al departamento comercial entre las empresas; permite gestionar campañas publicitarias, agendar llamadas, enviar boletines o mensajes promocionales, gestionar acontecimientos, etc.</p>
+<p><strong>Como resumen, diremos que un CRM sirve principalmente para tres cosas:</strong></p>
+<ol>
+<li>A nivel interno en la empresa mejora la comunicación interna. Las tareas relacionadas con los clientes son asignadas a empleados y se hace un seguimiento exhaustivo.</li>
+<li>Se mejora la productividad en el trabajo, ya que se evitan gran cantidad de correos electrónicos, reuniones innecesarias, etc. Además, centralizando toda la información sobre los clientes se ahorra tiempo, esfuerzo y trabajo.</li>
+<li>Los comerciales pueden vender más gracias a que pueden hacer un seguimiento de todas sus ventas de manera personalizada. También pueden gestionar más de una venta a la vez.</li>
+</ol>
+<p><strong>Funcionalidades del CRM</strong></p>
+<ul>
+<li>VENTAS  </li>
+<li>CALIDAD  </li>
+<li>SERVICIO  </li>
+<li>SEGUIMIENTO</li>
+</ul>
+<h2 id="caracteristicas-ventajas-y-desventajas">Características, ventajas y desventajas</h2>
+<h3 id="importante">IMPORTANTE</h3>
+<p>En este apartado únicamente hablaremos del ERP, ya que cualquier característica de este también lo será de los CRM. Los CRM pueden formar parte de un ERP o ser independientes, con características similares a las del ERP.</p>
+<h3 id="caracteristicas-de-los-erp">CARACTERÍSTICAS DE LOS ERP</h3>
+<ul>
+<li>
+<p><strong>Son sistemas integrales:</strong> esto significa que se pueden controlar todos los procesos de una empresa, ya que cada departamento se relaciona con el resto. Por ejemplo, un cliente hace un pedido generando una orden de venta; a partir de ahí se pone el pedido en producción, se actualizan los stocks, se distribuye el producto, se cobra y se factura, generando todos los correspondientes asientos contables.</p>
+</li>
+<li>
+<p><strong>No utilizamos el ERP en su manera integrada:</strong> la información está duplicada y crece. Necesitaremos un software para cada proceso y esto puede producir duplicados de información. Con un ERP, la información está protegida, ya que no podemos manipularla.</p>
+</li>
+<li>
+<p><strong>Son sistemas modulares:</strong> la empresa está formada por departamentos que se relacionan entre sí, lo que implica que deben compartir información. Para facilitar este acceso, los ERP se dividen en módulos; solo instalaremos aquellos que se adecúan a nuestra empresa, permitiendo así la división de tareas.</p>
+</li>
+<li>
+<p><strong>Son adaptables:</strong> los ERP permiten la adaptación a los diferentes tipos de empresas. Para ello utilizamos la parametrización de los procesos dependiendo de las necesidades. Por ejemplo, podemos utilizar el mismo ERP en pequeñas, medianas y grandes empresas, simplemente configurando cada ERP según la empresa en la que se instale.</p>
+</li>
+</ul>
+<h3 id="ventajas-y-desventajas-de-los-erp">VENTAJAS Y DESVENTAJAS DE LOS ERP</h3>
+<table>
+<thead>
+<tr>
+<th><strong>VENTAJAS</strong></th>
+<th><strong>DESVENTAJAS</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estandarización e integración de la información</td>
+<td>Costes a primera vista</td>
+</tr>
+<tr>
+<td>Mayor control organizacional</td>
+<td>Mucho tiempo de implementación</td>
+</tr>
+<tr>
+<td>Minimiza el tiempo de análisis</td>
+<td>Adquisición y adaptación de hardware</td>
+</tr>
+<tr>
+<td>Disminuye costos logísticos</td>
+<td>Pocos expertos en el sistema</td>
+</tr>
+<tr>
+<td>Información actualizada en tiempo real</td>
+<td>Dificultad en la utilización del sistema</td>
+</tr>
+<tr>
+<td>Optimiza tiempos de implantación de proyectos</td>
+<td>Costes de licencias altos</td>
+</tr>
+<tr>
+<td>Evita información duplicada</td>
+<td></td>
+</tr>
+<tr>
+<td>Módulos configurables</td>
+<td></td>
+</tr>
+<tr>
+<td>Mejora el servicio al cliente</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
