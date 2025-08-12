@@ -1,228 +1,1401 @@
-<!DOCTYPE html>
-<html lang="en" data-bs-theme="light">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
         <link rel="canonical" href="https://alapvi.github.io/sge/infodatos/datosodoo/">
-        <link rel="shortcut icon" href="../../img/favicon.ico">
-        <title>📚 Relación de tablas y modelos en Odoo - Sistemas de Gestión Empresarial</title>
-        <link href="../../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../../css/fontawesome.min.css" rel="stylesheet">
-        <link href="../../css/brands.min.css" rel="stylesheet">
-        <link href="../../css/solid.min.css" rel="stylesheet">
-        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
-        <link href="../../css/base.css" rel="stylesheet">
-        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
-        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
-    </head>
+      
+      
+        <link rel="prev" href="../accesopsql/">
+      
+      
+        <link rel="next" href="../webymvc/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
+    
+    
+      
+        <title>Los datos en Odoo - Sistemas de Gestión Empresarial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
 
-    <body>
-        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
-            <div class="container">
-                <a class="navbar-brand" href="../..">Sistemas de Gestión Empresarial</a>
-                <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Expanded navigation -->
-                <div id="navbar-collapse" class="navbar-collapse collapse">
-                        <!-- Main navigation -->
-                        <ul class="nav navbar-nav">
-                            <li class="nav-item">
-                                <a href="../.." class="nav-link">Presentación</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Apps</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../apps/accesslist/" class="dropdown-item">Añadir accesos en ir.model.access.csv para task_model y verificar vistas por defecto</a>
-</li>
-                                    
-<li>
-    <a href="../../apps/addicon/" class="dropdown-item">🎨 Añadir un icono a tu app</a>
-</li>
-                                    
-<li>
-    <a href="../../apps/addlogic/" class="dropdown-item">Lógica de negocio</a>
-</li>
-                                    
-<li>
-    <a href="../../apps/addmenu/" class="dropdown-item">Añadir acción de ventana y menús para task_model (sin vistas aún)</a>
-</li>
-                                    
-<li>
-    <a href="../../apps/createmodel/" class="dropdown-item">Crear un modelo nuevo task_model en Odoo</a>
-</li>
-                                    
-<li>
-    <a href="../../apps/createviews/" class="dropdown-item">Redefinir las vistas &lt;list&gt; y &lt;form&gt; de task.model (archivo separado)</a>
-</li>
-                                    
-<li>
-    <a href="../../apps/firstapp/" class="dropdown-item">Mi primera app en Odoo</a>
-</li>
-                                    
-<li>
-    <a href="../../apps/searchviews/" class="dropdown-item">Crear vista &lt;search&gt; para task_model con filtros útiles</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Infodatos</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../accesopsql/" class="dropdown-item">📂 Acceso a la Base de Datos PostgreSQL</a>
-</li>
-                                    
-<li>
-    <a href="./" class="dropdown-item active" aria-current="page">📚 Relación de tablas y modelos en Odoo</a>
-</li>
-                                    
-<li>
-    <a href="../webymvc/" class="dropdown-item">🌐 Interfaz web en Odoo 18 y patrón MVC</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Intro</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../intro/arquitecturaerp/" class="dropdown-item">Arquitectura de un ERP</a>
-</li>
-                                    
-<li>
-    <a href="../../intro/intro/" class="dropdown-item">Introducción a la gestión empresarial</a>
-</li>
-                                    
-<li>
-    <a href="../../intro/odooinst/" class="dropdown-item">Instalación de Odoo</a>
-</li>
-                                    
-<li>
-    <a href="../../intro/sge/" class="dropdown-item">Sge</a>
-</li>
-                                    
-<li>
-    <a href="../../intro/tiposinst/" class="dropdown-item">Tiposinst</a>
-</li>
-                                    
-<li>
-    <a href="../../intro/vscode/" class="dropdown-item">Visual Studio Code</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modelos</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../modelos/basicfields/" class="dropdown-item">Creación de un modelo</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Modulos</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../modulos/implanerp/" class="dropdown-item">📦 Implantación de un ERP con Odoo</a>
-</li>
-                                    
-<li>
-    <a href="../../modulos/instmoderp/" class="dropdown-item">Instalación de módulos en Odoo</a>
-</li>
-                                    
-<li>
-    <a href="../../modulos/moduloserp/" class="dropdown-item">Módulos de un ERP</a>
-</li>
-                                </ul>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Tutpython</a>
-                                <ul class="dropdown-menu">
-                                    
-<li>
-    <a href="../../tutpython/tutpython/" class="dropdown-item">Python Essentials 1 — NetAcad &amp; Documentación Oficial</a>
-</li>
-                                </ul>
-                            </li>
-                        </ul>
-
-                    <ul class="nav navbar-nav ms-md-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
-                                <i class="fa fa-search"></i> Search
-                            </a>
-                        </li>
-                            <li class="nav-item">
-                                <a rel="prev" href="../accesopsql/" class="nav-link">
-                                    <i class="fa fa-arrow-left"></i> Previous
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a rel="next" href="../webymvc/" class="nav-link">
-                                    Next <i class="fa fa-arrow-right"></i>
-                                </a>
-                            </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
-            <span class="fa fa-angle-down"></span>
-        </button>
-    </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item" data-bs-level="1"><a href="#relacion-de-tablas-y-modelos-en-odoo" class="nav-link">📚 Relación de tablas y modelos en Odoo</a>
-              <ul class="nav flex-column">
-            <li class="nav-item" data-bs-level="2"><a href="#formato-de-nombres-de-tablas-en-odoo" class="nav-link">Formato de nombres de tablas en Odoo</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#relacion-tablas-modelos-apps" class="nav-link">Relación tablas ↔ modelos ↔ apps</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#ejemplo-creacion-y-consulta-de-un-usuario" class="nav-link">Ejemplo: creación y consulta de un usuario</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#urls-del-backend-y-su-relacion-con-las-tablas" class="nav-link">URLs del backend y su relación con las tablas</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#consultas-sql-utiles" class="nav-link">Consultas SQL útiles</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-bs-level="2"><a href="#actividades" class="nav-link">📌 Actividades</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-              </ul>
-            </li>
-        </ul>
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#relacion-de-tablas-y-modelos-en-odoo" class="md-skip">
+          Saltar a contenido
+        </a>
+      
     </div>
-</div></div>
-                    <div class="col-md-9" role="main">
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Sistemas de Gestión Empresarial" class="md-header__button md-logo" aria-label="Sistemas de Gestión Empresarial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas de Gestión Empresarial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Los datos en Odoo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sistemas de Gestión Empresarial" class="md-nav__button md-logo" aria-label="Sistemas de Gestión Empresarial" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Sistemas de Gestión Empresarial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Presentación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Introducción ERP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Introducción ERP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/sge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Concepto de SGE
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/arquitecturaerp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Arquitectura de un ERP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/tiposinst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Tipos de licencias y de instalación de un ERP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/odooinst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación de Odoo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Visual Studio Code
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Estructura de un ERP
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Estructura de un ERP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/moduloserp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Módulos en Odoo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/instmoderp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación de módulos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/implanerp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Implantación de un ERP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Organización, consulta y modificación de la información
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Organización, consulta y modificación de la información
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accesopsql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Acceso a la BD
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Los datos en Odoo
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Los datos en Odoo
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#formato-de-nombres-de-tablas-en-odoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato de nombres de tablas en Odoo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-tablas-modelos-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relación tablas ↔ modelos ↔ apps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-creacion-y-consulta-de-un-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: creación y consulta de un usuario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo: creación y consulta de un usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-usuario-en-odoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear usuario en Odoo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-consultar-en-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Consultar en PostgreSQL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urls-del-backend-y-su-relacion-con-las-tablas" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs del backend y su relación con las tablas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="URLs del backend y su relación con las tablas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-clasico-odoo-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato clásico (Odoo &lt;= 17)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-nuevo-odoo-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato nuevo (Odoo 18)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibilidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapeo-basico-antiguo-nuevo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapeo básico (antiguo → nuevo)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consultas-sql-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consultas SQL útiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Actividades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 Actividades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-1-relacion-modelo-tabla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad 1: Relación modelo-tabla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-2-analisis-de-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad 2: Análisis de URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../webymvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MVC y consulta de información en Odoo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Mi primera App en Odoo
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Mi primera App en Odoo
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/firstapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Estructura de la app
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/createmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear un nuevo modelo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/addmenu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear los menús
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/accesslist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Añadir permisos de acceso
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/createviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Crear las vistas personalizadas
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/searchviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Añadir filtros y agrupaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/addlogic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Añadir lógica de negocio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/addicon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Añadir un icono
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Tutorial de Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorial de Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutpython/tutpython/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Modelos
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Modelos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/basicfields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Campos básicos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#formato-de-nombres-de-tablas-en-odoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato de nombres de tablas en Odoo
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relacion-tablas-modelos-apps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Relación tablas ↔ modelos ↔ apps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-creacion-y-consulta-de-un-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo: creación y consulta de un usuario
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ejemplo: creación y consulta de un usuario">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-crear-usuario-en-odoo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 1: Crear usuario en Odoo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-consultar-en-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paso 2: Consultar en PostgreSQL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#urls-del-backend-y-su-relacion-con-las-tablas" class="md-nav__link">
+    <span class="md-ellipsis">
+      URLs del backend y su relación con las tablas
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="URLs del backend y su relación con las tablas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#formato-clasico-odoo-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato clásico (Odoo &lt;= 17)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formato-nuevo-odoo-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formato nuevo (Odoo 18)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compatibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      Compatibilidad
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapeo-basico-antiguo-nuevo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mapeo básico (antiguo → nuevo)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#consultas-sql-utiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      Consultas SQL útiles
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actividades" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 Actividades
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📌 Actividades">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#actividad-1-relacion-modelo-tabla" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad 1: Relación modelo-tabla
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#actividad-2-analisis-de-url" class="md-nav__link">
+    <span class="md-ellipsis">
+      Actividad 2: Análisis de URL
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
 
 <h1 id="relacion-de-tablas-y-modelos-en-odoo">📚 Relación de tablas y modelos en Odoo</h1>
 <p>Vamos a ver cómo <a href="https://www.odoo.com/documentation/18.0/">Odoo</a> traduce los <strong><a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html#model-objects">modelos</a></strong> definidos en Python a <strong><a href="https://www.postgresql.org/docs/current/ddl.html">tablas en PostgreSQL</a></strong>, con ejemplos visuales y actividades prácticas.</p>
@@ -230,9 +1403,9 @@
 <h2 id="formato-de-nombres-de-tablas-en-odoo">Formato de nombres de tablas en Odoo</h2>
 <p>En Odoo, los <strong><a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html#model-objects">modelos</a></strong> se definen en Python con la convención <code>nombre.modulo</code>.<br />
 Ejemplo:</p>
-<pre><code class="language-python">class ResPartner(models.Model):
-    _name = 'res.partner'
-</code></pre>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">ResPartner</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;res.partner&#39;</span>
+</span></code></pre></div>
 <p>En PostgreSQL, estos nombres se transforman a <strong><a href="https://en.wikipedia.org/wiki/Snake_case">snake_case</a></strong> con guiones bajos:</p>
 <table>
 <thead>
@@ -261,7 +1434,8 @@ Ejemplo:</p>
 <li>Punto (<code>.</code>) en el modelo → guion bajo (<code>_</code>) en la tabla.</li>
 <li>Campos <strong><a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html#odoo.fields.Many2one">Many2one</a></strong> → columna con sufijo <code>_id</code>.</li>
 <li>Tablas <strong><a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html#odoo.fields.Many2many">Many2many</a></strong> → formato:
-   <code>modelo1_modelo2_rel</code>
+   <div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>modelo1_modelo2_rel
+</span></code></pre></div>
    Ejemplo: <code>sale_order_res_partner_rel</code>.</li>
 </ol>
 <hr />
@@ -327,44 +1501,44 @@ Ejemplo:</p>
 <li>Rol: <strong>Usuario interno</strong></li>
 <li><strong>Guardar</strong>.</li>
 </ol>
-<figure markdown="span">
-  !["Crear usuario en Odoo"](images/accesoDatos01.png){width="100%" }
-  <figcaption>Crear usuario en Odoo</figcaption>
+<figure>
+  <img alt="&quot;Crear usuario en Odoo&quot;" src="../images/accesoDatos01.png" width="100%" />
+<br />
+<figcaption>Crear usuario en Odoo</figcaption>
 </figure>
-
 <h3 id="paso-2-consultar-en-postgresql">Paso 2: Consultar en PostgreSQL</h3>
-<pre><code class="language-sql">-- Buscar en res_users (credenciales)
-SELECT id, login, active
-FROM res_users
-WHERE login = 'alberto@simarro.local';
-
--- Buscar en res_partner (datos de contacto)
-SELECT id, name, email
-FROM res_partner
-WHERE email = 'alberto@simarro.local';
-</code></pre>
-<p>💡 <strong>Nota</strong>: <code>res_users.partner_id</code> apunta al registro en <code>res_partner</code>.</p>
+<p><div class="language-sql highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1">-- Buscar en res_users (credenciales)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">login</span><span class="p">,</span><span class="w"> </span><span class="n">active</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">res_users</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;alberto@simarro.local&#39;</span><span class="p">;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1">-- Buscar en res_partner (datos de contacto)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="k">FROM</span><span class="w"> </span><span class="n">res_partner</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="k">WHERE</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;alberto@simarro.local&#39;</span><span class="p">;</span>
+</span></code></pre></div>
+💡 <strong>Nota</strong>: <code>res_users.partner_id</code> apunta al registro en <code>res_partner</code>.</p>
 <hr />
 <h2 id="urls-del-backend-y-su-relacion-con-las-tablas">URLs del backend y su relación con las tablas</h2>
 <h3 id="formato-clasico-odoo-17">Formato clásico (Odoo &lt;= 17)</h3>
-<p>En versiones anteriores, las URLs usaban el formato con <strong>hash</strong> y parámetros, por ejemplo:</p>
-<pre><code>/web#id=45&amp;model=sale.order&amp;view_type=form
-</code></pre>
-<p>📌 Significa:
+<p>En versiones anteriores, las URLs usaban el formato con <strong>hash</strong> y parámetros, por ejemplo:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>/web#id=45&amp;model=sale.order&amp;view_type=form
+</span></code></pre></div>
+📌 Significa:
 - <code>id=45</code> → ID del registro.
 - <code>model=sale.order</code> → Modelo Odoo → Tabla <code>sale_order</code>.</p>
-<p>Consulta equivalente en PostgreSQL:</p>
-<pre><code class="language-sql">SELECT * FROM sale_order WHERE id = 45;
-</code></pre>
+<p>Consulta equivalente en PostgreSQL:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sale_order</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
+</span></code></pre></div></p>
 <p>Más información: <a href="https://www.odoo.com/documentation/17.0/developer/reference/backend/views.html">Documentación de vistas y acciones en Odoo</a>.</p>
 <hr />
 <h3 id="formato-nuevo-odoo-18">Formato nuevo (Odoo 18)</h3>
-<p>A partir de <strong>Odoo 18</strong>, el cliente web utiliza <strong>rutas limpias</strong> basadas en path, por ejemplo:</p>
-<pre><code>http://localhost:8069/odoo/contacts/7
-</code></pre>
-<p>o</p>
-<pre><code>http://localhost:8069/odoo/sales/45
-</code></pre>
+<p>A partir de <strong>Odoo 18</strong>, el cliente web utiliza <strong>rutas limpias</strong> basadas en path, por ejemplo:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>http://localhost:8069/odoo/contacts/7
+</span></code></pre></div>
+o
+<div class="language-text highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>http://localhost:8069/odoo/sales/45
+</span></code></pre></div></p>
 <p>Ventajas:
 - Más legibles para el usuario.
 - Mejor indexación para integraciones externas.</p>
@@ -403,44 +1577,46 @@ WHERE email = 'alberto@simarro.local';
 <p>El slug puede variar según la vista desde la que se accede al registro.</p>
 </blockquote>
 <hr />
-<p>Cuando accedes a un registro en Odoo, la URL muestra datos clave:</p>
-<pre><code>/web#id=45&amp;model=sale.order&amp;view_type=form
-</code></pre>
-<p>📌 Significa:
+<p>Cuando accedes a un registro en Odoo, la URL muestra datos clave:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>/web#id=45&amp;model=sale.order&amp;view_type=form
+</span></code></pre></div>
+📌 Significa:
 - <code>id=45</code> → ID del registro.
 - <code>model=sale.order</code> → Modelo Odoo → Tabla <code>sale_order</code>.</p>
-<p>Consulta equivalente:</p>
-<pre><code class="language-sql">SELECT * FROM sale_order WHERE id = 45;
-</code></pre>
+<p>Consulta equivalente:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">sale_order</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">45</span><span class="p">;</span>
+</span></code></pre></div></p>
 <p>Más información: <a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/views.html">Documentación de vistas y acciones en Odoo</a>.</p>
 <hr />
 <h2 id="consultas-sql-utiles">Consultas SQL útiles</h2>
 <ul>
-<li><strong>Últimos 5 usuarios creados</strong>:</li>
+<li>
+<p><strong>Últimos 5 usuarios creados</strong>:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">login</span><span class="p">,</span><span class="w"> </span><span class="n">create_date</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">res_users</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">create_date</span><span class="w"> </span><span class="k">DESC</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
+<li>
+<p><strong>Pedidos de venta con cliente</strong>:
+<div class="language-sql highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">SELECT</span><span class="w"> </span><span class="n">so</span><span class="p">.</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">so</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">pedido</span><span class="p">,</span><span class="w"> </span><span class="n">rp</span><span class="p">.</span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">cliente</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">FROM</span><span class="w"> </span><span class="n">sale_order</span><span class="w"> </span><span class="n">so</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">JOIN</span><span class="w"> </span><span class="n">res_partner</span><span class="w"> </span><span class="n">rp</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">so</span><span class="p">.</span><span class="n">partner_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">rp</span><span class="p">.</span><span class="n">id</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">so</span><span class="p">.</span><span class="n">date_order</span><span class="w"> </span><span class="k">DESC</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="k">LIMIT</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span>
+</span></code></pre></div></p>
+</li>
 </ul>
-<pre><code class="language-sql">SELECT id, login, create_date
-FROM res_users
-ORDER BY create_date DESC
-LIMIT 5;
-</code></pre>
-<ul>
-<li><strong>Pedidos de venta con cliente</strong>:</li>
-</ul>
-<pre><code class="language-sql">SELECT so.id, so.name AS pedido, rp.name AS cliente
-FROM sale_order so
-JOIN res_partner rp ON so.partner_id = rp.id
-ORDER BY so.date_order DESC
-LIMIT 10;
-</code></pre>
 <hr />
 <h2 id="actividades">📌 Actividades</h2>
 <h3 id="actividad-1-relacion-modelo-tabla"><strong>Actividad 1: Relación modelo-tabla</strong></h3>
 <p>En Odoo, las reglas de conversión de modelo a tabla siguen siendo las mismas que en versiones anteriores.</p>
 <p>Dado el siguiente modelo Odoo:</p>
-<p>Dado el siguiente modelo Odoo:</p>
-<pre><code class="language-python">class StockMove(models.Model):
-    _name = 'stock.move'
-</code></pre>
+<p>Dado el siguiente modelo Odoo:
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">StockMove</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="n">_name</span> <span class="o">=</span> <span class="s1">&#39;stock.move&#39;</span>
+</span></code></pre></div></p>
 <ol>
 <li>¿Cómo se llamará la tabla en PostgreSQL?</li>
 <li>Si tiene un campo <strong><a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html#odoo.fields.Many2one">Many2one</a></strong> llamado <code>product_id</code>, ¿cómo aparecerá en la tabla?</li>
@@ -448,94 +1624,72 @@ LIMIT 10;
 <hr />
 <h3 id="actividad-2-analisis-de-url"><strong>Actividad 2: Análisis de URL</strong></h3>
 <p>Analiza las siguientes URLs que apuntan al mismo registro:</p>
-<p><strong>Formato clásico (Odoo &lt;= 17):</strong></p>
-<pre><code>/web#id=102&amp;model=account.move&amp;view_type=form
-</code></pre>
-<p><strong>Formato nuevo (Odoo 18):</strong></p>
-<pre><code>/odoo/accounting/102
-</code></pre>
+<p><strong>Formato clásico (Odoo &lt;= 17):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>/web#id=102&amp;model=account.move&amp;view_type=form
+</span></code></pre></div></p>
+<p><strong>Formato nuevo (Odoo 18):</strong>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>/odoo/accounting/102
+</span></code></pre></div></p>
 <ol>
 <li>¿Qué modelo está mostrando?</li>
 <li>¿Qué tabla de PostgreSQL se consulta?</li>
 <li>Escribe la consulta SQL para obtener el registro.</li>
 <li>Explica qué parte de la URL nueva (<code>/odoo/accounting/102</code>) corresponde al slug de la app y cuál al ID del registro.</li>
 <li>¿Qué ocurriría si en Odoo 18 introduces directamente la URL clásica en el navegador?</li>
-</ol></div>
-            </div>
-        </div>
+</ol>
 
-        <footer class="col-md-12">
-            <hr>
-            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
-        </footer>
-        <script src="../../js/bootstrap.bundle.min.js"></script>
-        <script>
-            var base_url = "../..",
-                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
-        </script>
-        <script src="../../js/base.js"></script>
-        <script src="../../search/main.js"></script>
 
-        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="searchModalLabel">Search</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
             </div>
-            <div class="modal-body">
-                <p>From here you can search these documents. Enter your search terms below.</p>
-                <form>
-                    <div class="form-group">
-                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
-                    </div>
-                </form>
-                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
-            </div>
-            <div class="modal-footer">
-            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-    </div>
-</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th style="width: 20%;">Keys</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td class="help shortcut"><kbd>?</kbd></td>
-                    <td>Open this help</td>
-                  </tr>
-                  <tr>
-                    <td class="next shortcut"><kbd>n</kbd></td>
-                    <td>Next page</td>
-                  </tr>
-                  <tr>
-                    <td class="prev shortcut"><kbd>p</kbd></td>
-                    <td>Previous page</td>
-                  </tr>
-                  <tr>
-                    <td class="search shortcut"><kbd>s</kbd></td>
-                    <td>Search</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="modal-footer">
-            </div>
-        </div>
-    </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
 </div>
-
-    </body>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.50899def.min.js"></script>
+      
+    
+  </body>
 </html>
