@@ -1,0 +1,2486 @@
+
+<!doctype html>
+<html lang="es" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://alapvi.github.io/sge/vistas/vistas/">
+      
+      
+        <link rel="prev" href="../../modelos/transientmodels/">
+      
+      
+        <link rel="next" href="../vistasadv/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../images/logo_peq.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>Vistas - Sistemas de Gestión Empresarial</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#las-vistas-en-odoo-18" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="Sistemas de Gestión Empresarial" class="md-header__button md-logo" aria-label="Sistemas de Gestión Empresarial" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Sistemas de Gestión Empresarial
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Vistas
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Sistemas de Gestión Empresarial" class="md-nav__button md-logo" aria-label="Sistemas de Gestión Empresarial" data-md-component="logo">
+      
+  <img src="../../images/logo.png" alt="logo">
+
+    </a>
+    Sistemas de Gestión Empresarial
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Presentación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción ERP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Introducción ERP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/intro/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/sge/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Concepto de SGE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/arquitecturaerp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arquitectura de un ERP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/tiposinst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tipos de licencias y de instalación de un ERP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/odooinst/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación de Odoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro/vscode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Studio Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructura de un ERP
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Estructura de un ERP
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/moduloserp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Módulos en Odoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/instmoderp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Instalación de módulos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modulos/implanerp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Implantación de un ERP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Organización, consulta y modificación de la información
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Organización, consulta y modificación de la información
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infodatos/accesopsql/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Acceso a la BD
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infodatos/datosodoo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Los datos en Odoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../infodatos/webymvc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MVC y consulta de información en Odoo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mi primera App en Odoo
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Mi primera App en Odoo
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/firstapp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Estructura de la app
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/createmodel/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crear un nuevo modelo
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/addmenu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crear los menús
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/accesslist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Añadir permisos de acceso
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/createviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Crear las vistas personalizadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/searchviews/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Añadir filtros y agrupaciones
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/addlogic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Añadir lógica de negocio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../apps/addicon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Añadir un icono
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tutorial de Python
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tutorial de Python
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tutpython/tutpython/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Modelos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Modelos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/basicfields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campos básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/relationalfields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campos relacionales
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/computefields/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Campos calculados
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/constraints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Constraints
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/activity01/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Actividad propuesta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modelos/transientmodels/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    TransientModels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vistas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vistas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vistas
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vistas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-vista-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de vista form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistas-list-odoo-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vistas list (Odoo 18)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistas list (Odoo 18)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colores-decorations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colores (decorations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-invisibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos invisibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#botones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Botones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordenar-por-un-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordenar por un field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agrupar-por-un-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agrupar por un field
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistas-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vistas form
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistas form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pestanas-y-separadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pestañas y separadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one2many-modificar-la-list-embebida-o-la-vista-usada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One2many: modificar la list embebida o la vista usada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-por-defecto-en-un-one2many" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores por defecto en un one2many
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domains-en-many2one-y-many2many" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domains en Many2one y Many2many
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widgets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Widgets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer-y-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer y Float
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#char-y-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Char y Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard_graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dashboard_graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boolean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many2one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Many2one
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many2many" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Many2many
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one2many" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One2many
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-la-list-del-one2many-odoo-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modificar la list del One2many (Odoo 18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularios-dinamicos-odoo-18-usar-attrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formularios dinámicos (Odoo 18) — usar attrs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vistasadv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vistas Avanzadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ejemplo-de-vista-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ejemplo de vista form
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistas-list-odoo-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vistas list (Odoo 18)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistas list (Odoo 18)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colores-decorations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Colores (decorations)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#editable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Editable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-invisibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos invisibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#botones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Botones
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#totales" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Totales
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ordenar-por-un-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ordenar por un field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#agrupar-por-un-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Agrupar por un field
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vistas-form" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vistas form
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Vistas form">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pestanas-y-separadores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pestañas y separadores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one2many-modificar-la-list-embebida-o-la-vista-usada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One2many: modificar la list embebida o la vista usada
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#valores-por-defecto-en-un-one2many" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Valores por defecto en un one2many
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domains-en-many2one-y-many2many" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domains en Many2one y Many2many
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#widgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widgets
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Widgets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#integer-y-float" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integer y Float
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#char-y-text" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Char y Text
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dashboard_graph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dashboard_graph
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#boolean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Boolean
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many2one" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Many2one
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#many2many" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Many2many
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#one2many" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        One2many
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modificar-la-list-del-one2many-odoo-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Modificar la list del One2many (Odoo 18)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formularios-dinamicos-odoo-18-usar-attrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formularios dinámicos (Odoo 18) — usar attrs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="las-vistas-en-odoo-18">Las vistas en Odoo 18</h1>
+<p>En este capítulo exploraremos cómo funcionan las vistas en Odoo, qué tipos de vistas podemos utilizar y cómo se pueden personalizar mediante XML y acciones de servidor. Aprenderemos a estructurar correctamente una interfaz de usuario, a definir formularios, listados, kanban y gráficos, y a gestionar la navegación entre ellos.</p>
+<p>Las vistas son la manera en la que se representan los modelos. Si no declaramos vistas, se pueden referenciar por su tipo y Odoo generará una vista <strong>list</strong> o <strong>form</strong> estándar para poder ver los registros de cada modelo. No obstante, casi siempre queremos personalizar las vistas y en ese caso se suelen referenciar por un <strong>identificador</strong>.</p>
+<p>Las vistas tienen una <strong>prioridad</strong> y, si no se especifica el identificador de la que queremos mostrar, se mostrará la que tenga mayor prioridad.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;view_id&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>view.name<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>object_name<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;priority&quot;</span><span class="w"> </span><span class="na">eval=</span><span class="s">&quot;16&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;arch&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="cm">&lt;!-- contenido de la vista: &lt;form&gt;, &lt;list&gt;, &lt;graph&gt;, ... --&gt;</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="nt">&lt;/record&gt;</span>
+</span></code></pre></div>
+<p>Las vistas se guardan en el modelo <code>ir.ui.view</code>. Todos los elementos de interfaz suelen tener en su nombre el prefijo <code>ir.ui</code> (Information Repository, User Interface). Por ejemplo: los menús en <code>ir.ui.menu</code> o las acciones en <code>ir.actions.window</code>.</p>
+<h2 id="ejemplo-de-vista-form">Ejemplo de vista form</h2>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;course_form_view&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>course.form<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>openacademy.course<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;arch&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="nt">&lt;form</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Course Form&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">            </span><span class="nt">&lt;sheet&gt;</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">                </span><span class="nt">&lt;group&gt;</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">                    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">                    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;description&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">                </span><span class="nt">&lt;/group&gt;</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">            </span><span class="nt">&lt;/sheet&gt;</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="nt">&lt;/form&gt;</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="nt">&lt;/record&gt;</span>
+</span></code></pre></div>
+<p>Aunque Odoo ya proporciona una vista <strong>list</strong> y una <strong>form</strong> por defecto, casi siempre conviene mejorarlas. Todas las vistas tienen <code>field</code> que pueden tener distintos <strong>widgets</strong>. En las vistas <strong>form</strong> podemos adaptar mucho el aspecto con grupos de campos, pestañas, campos ocultos condicionalmente, etc.</p>
+<hr />
+<h2 id="vistas-list-odoo-18">Vistas list (Odoo 18)</h2>
+<p>En Odoo 18, las vistas tabulares se definen con la etiqueta <code>&lt;list&gt;</code> (los ejemplos antiguos con <code>&lt;tree&gt;</code> se adaptan como <code>&lt;list&gt;</code>).</p>
+<p>Las vistas <strong>list</strong> son uno de los tipos de vistas más utilizados en Odoo. Permiten mostrar registros en formato de tabla, facilitando la visualización y la gestión de grandes cantidades de datos.</p>
+<p>Son especialmente útiles para representar información resumida de un conjunto de registros, con columnas que muestran los campos más relevantes. Además, pueden incluir funcionalidades como ordenación, filtros y acciones rápidas.</p>
+<p>Ejemplo básico de vista list para <code>res.partner</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;view_partner_list&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>res.partner.list<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>res.partner<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;arch&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="nt">&lt;list&gt;</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">            </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">            </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;phone&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">            </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;email&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">            </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;company_id&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">        </span><span class="nt">&lt;/list&gt;</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">    </span><span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="nt">&lt;/record&gt;</span>
+</span></code></pre></div>
+<ul>
+<li><code>&lt;record&gt;</code>: define un nuevo registro en <code>ir.ui.view</code>, que representa la vista.</li>
+<li><code>&lt;field name="name"&gt;</code>: nombre único de la vista.</li>
+<li><code>&lt;field name="model"&gt;</code>: modelo al que pertenece (<code>res.partner</code>).</li>
+<li><code>&lt;field name="arch" type="xml"&gt;</code>: estructura XML de la vista.</li>
+<li><code>&lt;list&gt;</code>: vista tipo lista/tabular.</li>
+<li><code>&lt;field .../&gt;</code>: columnas mostradas en la lista.</li>
+</ul>
+<h3 id="colores-decorations">Colores (decorations)</h3>
+<p>En las vistas <strong>list</strong> se puede modificar el color según el contenido de un campo con <code>decoration-*</code>, que utiliza colores contextuales de Bootstrap:</p>
+<ul>
+<li><code>decoration-bf</code> — líneas en <strong>negrita</strong></li>
+<li><code>decoration-it</code> — líneas en <em>cursiva</em></li>
+<li><code>decoration-danger</code> — rojo claro</li>
+<li><code>decoration-info</code> — azul claro</li>
+<li><code>decoration-muted</code> — gris claro</li>
+<li><code>decoration-primary</code> — morado claro</li>
+<li><code>decoration-success</code> — verde claro</li>
+<li><code>decoration-warning</code> — marrón claro</li>
+</ul>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">decoration-info=</span><span class="s">&quot;state==&#39;draft&#39;&quot;</span><span class="w"> </span><span class="na">decoration-danger=</span><span class="s">&quot;state==&#39;trashed&#39;&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;state&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="nt">&lt;/list&gt;</span>
+</span></code></pre></div>
+<p>Si se quiere comparar un campo <code>Date</code> o <code>Datetime</code>, se puede usar la variable global de QWeb <code>current_date</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">decoration-info=</span><span class="s">&quot;start_date==current_date&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span>...
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nt">&lt;/list&gt;</span>
+</span></code></pre></div>
+<p>También se pueden aplicar <code>decoration-*</code> a campos individualmente.</p>
+<h3 id="editable">Editable</h3>
+<p>Se puede hacer una lista editable para no tener que abrir un formulario:</p>
+<ul>
+<li><code>editable="top"</code>: crea registros nuevos arriba</li>
+<li><code>editable="bottom"</code>: crea registros nuevos abajo</li>
+</ul>
+<p>Las listas editables pueden incluir <code>on_write</code> para indicar un método a ejecutar cuando se edita o crea un elemento.</p>
+<h3 id="campos-invisibles">Campos invisibles</h3>
+<p>A veces un campo sirve para lógica interna pero no hace falta mostrarlo. Se puede incluir y marcar como invisible (constante):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">decoration-info=</span><span class="s">&quot;duration==0&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;course_id&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;duration&quot;</span><span class="w"> </span><span class="na">invisible=</span><span class="s">&quot;1&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;taken_seats&quot;</span><span class="w"> </span><span class="na">widget=</span><span class="s">&quot;progressbar&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="nt">&lt;/list&gt;</span>
+</span></code></pre></div>
+<blockquote>
+<p>Para invisibilidad <strong>condicional</strong>, en Odoo 18 se recomienda <code>attrs</code> (ver la sección <em>Formularios dinámicos</em>).</p>
+</blockquote>
+<h3 id="botones">Botones</h3>
+<p>Las listas pueden tener botones con los mismos atributos que los botones de los formularios.</p>
+<p>⚠️ Cuidado con las listas dentro de formularios (<code>x2many</code>): el botón se ejecuta en el <strong>modelo de la lista</strong>, no en el modelo del formulario que la contiene. Si queremos acceder al padre, hay que usar el atributo <code>parent</code>.</p>
+<h3 id="totales">Totales</h3>
+<p>En listas se pueden calcular totales con <code>sum</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;amount&quot;</span><span class="w"> </span><span class="na">sum=</span><span class="s">&quot;Total Amount&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="ordenar-por-un-field">Ordenar por un field</h3>
+<p>Una lista puede ordenarse por defecto por un campo (no computado) con <code>default_order</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">default_order=</span><span class="s">&quot;sequence,name desc&quot;</span><span class="nt">&gt;</span>
+</span></code></pre></div>
+<p>Si se quiere que siempre se ordene así, independientemente de la vista, hay que añadir al modelo el atributo <code>_order</code>.</p>
+<h3 id="agrupar-por-un-field">Agrupar por un field</h3>
+<p>Con <code>default_group_by</code>. Como el orden, solo funciona con campos guardados en base de datos.</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nt">&lt;list</span><span class="w"> </span><span class="na">default_group_by=</span><span class="s">&quot;born_year&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;born_year&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;age&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="nt">&lt;/list&gt;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="vistas-form">Vistas form</h2>
+<p>Para que un formulario quede bien, se recomienda incluir <code>&lt;sheet&gt;</code>, que evita que el formulario ocupe toda la pantalla en monitores panorámicos.</p>
+<p>Dentro de <code>&lt;sheet&gt;</code> se suelen usar <code>&lt;group&gt;</code> y dentro los <code>field</code>. Se pueden crear tantos <code>group</code> como se quiera, y pueden tener <code>string</code> para mostrar un título.</p>
+<p>Si no usamos <code>group</code>, los campos no tendrán etiqueta (<em>label</em>). Sin embargo, cosas como <code>class="oe_edit_only"</code> no funcionan dentro de <code>group</code>, por lo que a veces hay que usar:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">&lt;label</span><span class="w"> </span><span class="na">for=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="pestanas-y-separadores">Pestañas y separadores</h3>
+<p>Pestañas:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nt">&lt;notebook&gt;</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="nt">&lt;page</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Título&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="w">        </span>...
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">    </span><span class="nt">&lt;/page&gt;</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nt">&lt;/notebook&gt;</span>
+</span></code></pre></div>
+<p>Separadores:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">&lt;separator</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Description for Quotations&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="one2many-modificar-la-list-embebida-o-la-vista-usada">One2many: modificar la list embebida o la vista usada</h3>
+<p>Algunos One2many muestran una vista list por defecto no adecuada. Se puede redefinir la list embebida:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;subscriptions&quot;</span><span class="w"> </span><span class="na">colspan=</span><span class="s">&quot;4&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">   </span><span class="nt">&lt;list&gt;</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">      </span>...
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="w">   </span><span class="nt">&lt;/list&gt;</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nt">&lt;/field&gt;</span>
+</span></code></pre></div>
+<p>También se puede especificar la vista <strong>form</strong> que se abrirá al crear un nuevo elemento (por contexto):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;m2o_id&quot;</span><span class="w"> </span><span class="na">context=</span><span class="s">&quot;{&#39;form_view_ref&#39;: &#39;module_name.form_id&#39;}&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<blockquote>
+<p>Nota: las vistas list embebidas tienen limitaciones respecto a vistas llamadas con un <em>action</em> (por ejemplo, no se pueden agrupar).</p>
+</blockquote>
+<hr />
+<h3 id="valores-por-defecto-en-un-one2many">Valores por defecto en un one2many</h3>
+<p>Cuando creamos un One2many en modo <strong>form</strong> (o list editable), podemos crear elementos de la relación. Para que al crearlos el Many2one apunte al padre, se usa contexto:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>context=&quot;{&#39;default_<span class="nt">&lt;campo_many2one&gt;</span>&#39;:<span class="w"> </span>active_id}&quot;
+</span></code></pre></div>
+<p>Ejemplo dentro de un action:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;context&quot;</span><span class="nt">&gt;</span>{&quot;default_doctor&quot;:<span class="w"> </span>True}<span class="nt">&lt;/field&gt;</span>
+</span></code></pre></div>
+<p><code>active_id</code> apunta al id del elemento activo (en un formulario, el registro actual). En creación puede no existir aún en BD, pero internamente funciona.</p>
+<hr />
+<h3 id="domains-en-many2one-y-many2many">Domains en Many2one y Many2many</h3>
+<p>Los Many2one se pueden filtrar con <code>domain</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;hotel&quot;</span><span class="w"> </span><span class="na">domain=</span><span class="s">&quot;[(&#39;ishotel&#39;, &#39;=&#39;, True)]&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Funciona igual para Many2many.</p>
+<hr />
+<h2 id="widgets">Widgets</h2>
+<p>Algunos campos se pueden mostrar con un widget distinto al por defecto:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;image&quot;</span><span class="w"> </span><span class="na">widget=</span><span class="s">&quot;image&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;oe_left oe_avatar&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;taken_seats&quot;</span><span class="w"> </span><span class="na">widget=</span><span class="s">&quot;progressbar&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;country_id&quot;</span><span class="w"> </span><span class="na">widget=</span><span class="s">&quot;selection&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;state&quot;</span><span class="w"> </span><span class="na">widget=</span><span class="s">&quot;statusbar&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Las vistas <strong>form</strong>, <strong>list</strong> o <strong>kanban</strong> muestran campos en widgets. Cada field tiene un widget por defecto, pero puede cambiarse.</p>
+<h3 id="integer-y-float">Integer y Float</h3>
+<ul>
+<li><code>widget="integer"</code>: muestra el número sin separadores; si no hay valor, muestra <code>0</code>.</li>
+<li><code>widget="char"</code>: muestra el número; si no hay valor queda vacío y el campo suele ser más ancho.</li>
+<li><code>widget="id"</code>: muestra el número pero no se puede editar.</li>
+<li><code>widget="float"</code>: muestra el número con decimales.</li>
+<li><code>widget="percentpie"</code>: gráfico circular con porcentaje (no funciona en list ni en kanban).</li>
+<li><code>widget="float_time"</code>: muestra el float como tiempo.</li>
+<li><code>widget="progressbar"</code>: barra de progreso (funciona en list y form, no en kanban).</li>
+<li><code>widget="monetary"</code>: muestra el número con 2 decimales.</li>
+<li><code>widget="gauge"</code>: gráfico semicircular (solo en kanban).</li>
+</ul>
+<p>Ejemplo de <code>gauge</code> con opciones:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;current&quot;</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="w">       </span><span class="na">widget=</span><span class="s">&quot;gauge&quot;</span>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="w">       </span><span class="na">options=</span><span class="s">&quot;{&#39;max_field&#39;: &#39;target_goal&#39;, &#39;label_field&#39;: &#39;definition_suffix&#39;, &#39;style&#39;: &#39;width:160px; height: 120px;&#39;}&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="char-y-text">Char y Text</h3>
+<ul>
+<li><code>widget="char"</code>: editor de una línea.</li>
+<li><code>widget="text"</code>: campo más alto para varias líneas.</li>
+<li><code>widget="email"</code>: crea el enlace para enviar un correo.</li>
+<li><code>widget="url"</code>: crea un enlace con <code>http</code>.</li>
+<li><code>widget="date"</code>: permite guardar fechas como cadenas.</li>
+<li><code>widget="html"</code>: editor WYSIWYG (texto con formato).</li>
+</ul>
+<h3 id="dashboard_graph">dashboard_graph</h3>
+<p>Muestra un gráfico pequeño indicando una progresión. Necesita guardar (o generar) en un <code>char</code> un JSON concreto, por ejemplo:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="p">[{</span><span class="nt">&quot;values&quot;</span><span class="p">:</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="w">        </span><span class="p">[{</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;2019-01-31&quot;</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;7&quot;</span><span class="p">},</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="w">         </span><span class="p">{</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-01&quot;</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;20&quot;</span><span class="p">},</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="w">         </span><span class="p">{</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-02&quot;</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;45&quot;</span><span class="p">},</span>
+</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a><span class="w">         </span><span class="p">{</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-03&quot;</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;34&quot;</span><span class="p">},</span>
+</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a><span class="w">         </span><span class="p">{</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-04&quot;</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;40&quot;</span><span class="p">},</span>
+</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a><span class="w">         </span><span class="p">{</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-05&quot;</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;67&quot;</span><span class="p">},</span>
+</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a><span class="w">         </span><span class="p">{</span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="s2">&quot;2019-02-06&quot;</span><span class="p">,</span><span class="nt">&quot;value&quot;</span><span class="p">:</span><span class="s2">&quot;80&quot;</span><span class="p">}],</span>
+</span><span id="__span-19-9"><a id="__codelineno-19-9" name="__codelineno-19-9" href="#__codelineno-19-9"></a><span class="w"> </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="s2">&quot;Next Week&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="s2">&quot;Occupation&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;color&quot;</span><span class="p">:</span><span class="s2">&quot;#7c7bad&quot;</span><span class="p">}]</span>
+</span></code></pre></div>
+<p>Ejemplo XML:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;week_ocupation&quot;</span><span class="w"> </span><span class="na">widget=</span><span class="s">&quot;dashboard_graph&quot;</span><span class="w"> </span><span class="na">graph_type=</span><span class="s">&quot;bar&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>En ejemplos reales suele ser un campo <code>computed</code> que genera el JSON con <code>json.dumps()</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="n">values</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">record</span><span class="o">.</span><span class="n">sales</span><span class="p">:</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>    <span class="n">reserves</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="n">quantity</span>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="n">values</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;label&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">reserves</span><span class="p">)})</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="n">graph</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;values&#39;</span><span class="p">:</span> <span class="n">values</span><span class="p">,</span> <span class="s1">&#39;area&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;key&#39;</span><span class="p">:</span> <span class="s1">&#39;Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;#7c7bad&#39;</span><span class="p">}]</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a><span class="n">h</span><span class="o">.</span><span class="n">graph_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">graph</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Opciones:
+- <code>type</code>: <code>bar</code> o <code>line</code>. En <code>line</code>, en lugar de <code>label</code> y <code>value</code>, se usan <code>x</code> e <code>y</code>.</p>
+<h3 id="boolean">Boolean</h3>
+<p>Ribbon (Odoo 13): muestra una cinta en el formulario para un boolean importante:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="nt">&lt;widget</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;web_ribbon&quot;</span><span class="w"> </span><span class="na">text=</span><span class="s">&quot;Archived&quot;</span><span class="w"> </span><span class="na">bg_color=</span><span class="s">&quot;bg-danger&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a><span class="nt">&lt;widget</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;web_ribbon&quot;</span><span class="w"> </span><span class="na">text=</span><span class="s">&quot;Paid&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p><code>boolean_toggle</code> (en list): permite activar un boolean en la tabla.</p>
+<h3 id="date">Date</h3>
+<p><code>daterange</code>: muestra un rango de fechas.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="n">date_begin</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Datetime</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s1">&#39;Start Date&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;date_begin&quot;</span><span class="w"> </span><span class="na">widget=</span><span class="s">&quot;daterange&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="many2one">Many2one</h3>
+<ul>
+<li><code>widget="many2one"</code> (por defecto): selector con opción de crear. Se pueden desactivar opciones:</li>
+</ul>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;field_name&quot;</span><span class="w"> </span><span class="na">options=</span><span class="s">&quot;{&#39;no_create&#39;: True, &#39;no_open&#39;: True}&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<ul>
+<li><code>widget="many2onebutton"</code>: botón que indica si está asignado; al pulsar abre el formulario.</li>
+</ul>
+<h3 id="many2many">Many2many</h3>
+<ul>
+<li><code>widget="many2many"</code>: lista con opción de borrar/añadir.</li>
+<li><code>widget="many2many_tags"</code>: etiquetas.</li>
+<li><code>widget="many2many_checkboxes"</code>: lista de checkboxes.</li>
+<li><code>widget="many2many_kanban"</code>: muestra un kanban asociado (requiere vista kanban definida).</li>
+<li><code>widget="x2many_counter"</code>: solo muestra la cantidad.</li>
+</ul>
+<p><code>many2many_tags_avatar</code>:</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">partner_ids</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Many2many</span><span class="p">(</span><span class="s1">&#39;res.partner&#39;</span><span class="p">,</span> <span class="s1">&#39;calendar_event_res_partner_rel&#39;</span><span class="p">,</span> <span class="n">string</span><span class="o">=</span><span class="s1">&#39;Attendees&#39;</span><span class="p">)</span>
+</span></code></pre></div>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;partner_ids&quot;</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">       </span><span class="na">widget=</span><span class="s">&quot;many2many_tags_avatar&quot;</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">       </span><span class="na">write_model=</span><span class="s">&quot;calendar.contacts&quot;</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">       </span><span class="na">write_field=</span><span class="s">&quot;partner_id&quot;</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">       </span><span class="na">avatar_field=</span><span class="s">&quot;image_128&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="one2many">One2many</h3>
+<ul>
+<li><code>widget="one2many"</code>: por defecto.</li>
+<li><code>widget="one2many_list"</code>: se mantiene por retrocompatibilidad.</li>
+</ul>
+<h3 id="modificar-la-list-del-one2many-odoo-18">Modificar la list del One2many (Odoo 18)</h3>
+<p>Antes se hacía con <code>&lt;tree&gt;</code>. En Odoo 18 se usa <code>&lt;list&gt;</code>:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;fortress&quot;</span><span class="nt">&gt;</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">   </span><span class="nt">&lt;list&gt;</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="w">     </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">     </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;level&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">   </span><span class="nt">&lt;/list&gt;</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="nt">&lt;/field&gt;</span>
+</span></code></pre></div>
+<hr />
+<h2 id="formularios-dinamicos-odoo-18-usar-attrs">Formularios dinámicos (Odoo 18) — usar attrs</h2>
+<p>En Odoo 18, para reemplazar <code>invisible="..."</code> o <code>readonly="..."</code> condicionales, se usa <code>attrs</code> con dominios.</p>
+<p>Ejemplo de patrón típico (como el que indicas):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>attrs=&quot;{&#39;invisible&#39;:<span class="w"> </span>[(&#39;is_done&#39;,&#39;=&#39;,True)]}&quot;
+</span></code></pre></div>
+<ul>
+<li>Ocultar condicionalmente:</li>
+</ul>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;boyfriend_name&quot;</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">       </span><span class="na">attrs=</span><span class="s">&quot;{&#39;invisible&#39;: [(&#39;married&#39;, &#39;!=&#39;, False)]}&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<ul>
+<li>Readonly condicional:</li>
+</ul>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name2&quot;</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">       </span><span class="na">attrs=</span><span class="s">&quot;{&#39;readonly&#39;: [(&#39;condition&#39;, &#39;=&#39;, False)]}&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<ul>
+<li>Combinar reglas:</li>
+</ul>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">       </span><span class="na">attrs=</span><span class="s">&quot;{</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="s">           &#39;invisible&#39;: [(&#39;condition1&#39;, &#39;=&#39;, False)],</span>
+</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="s">           &#39;required&#39;:  [(&#39;condition2&#39;, &#39;=&#39;, True)],</span>
+</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="s">           &#39;readonly&#39;:  [(&#39;condition3&#39;, &#39;=&#39;, True)]</span>
+</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="s">       }&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+    
+  </body>
+</html>
