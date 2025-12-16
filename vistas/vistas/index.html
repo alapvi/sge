@@ -1730,13 +1730,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#formularios-dinamicos-odoo-18-usar-attrs" class="md-nav__link">
+  <a href="#formularios-dinamicos-en-odoo-18-sin-attrs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Formularios dinámicos (Odoo 18) — usar attrs
+        Formularios dinámicos en Odoo 18 — sin attrs
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Formularios dinámicos en Odoo 18 — sin attrs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ocultar-condicionalmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ocultar condicionalmente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readonly-condicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Readonly condicional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinar-varias-reglas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combinar varias reglas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2093,13 +2132,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#formularios-dinamicos-odoo-18-usar-attrs" class="md-nav__link">
+  <a href="#formularios-dinamicos-en-odoo-18-sin-attrs" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Formularios dinámicos (Odoo 18) — usar attrs
+        Formularios dinámicos en Odoo 18 — sin attrs
       
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Formularios dinámicos en Odoo 18 — sin attrs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ocultar-condicionalmente" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ocultar condicionalmente
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readonly-condicional" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Readonly condicional
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#combinar-varias-reglas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Combinar varias reglas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2400,33 +2478,73 @@
 </span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="nt">&lt;/field&gt;</span>
 </span></code></pre></div>
 <hr />
-<h2 id="formularios-dinamicos-odoo-18-usar-attrs">Formularios dinámicos (Odoo 18) — usar attrs</h2>
-<p>En Odoo 18, para reemplazar <code>invisible="..."</code> o <code>readonly="..."</code> condicionales, se usa <code>attrs</code> con dominios.</p>
-<p>Ejemplo de patrón típico (como el que indicas):</p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>attrs=&quot;{&#39;invisible&#39;:<span class="w"> </span>[(&#39;is_done&#39;,&#39;=&#39;,True)]}&quot;
-</span></code></pre></div>
+<h2 id="formularios-dinamicos-en-odoo-18-sin-attrs">Formularios dinámicos en Odoo 18 — sin <code>attrs</code></h2>
+<p>En Odoo 18 ya <strong>no se usa <code>attrs</code></strong> en las vistas XML.<br />
+En su lugar, las condiciones se escriben directamente en los atributos:</p>
 <ul>
-<li>Ocultar condicionalmente:</li>
+<li><code>invisible="..."</code></li>
+<li><code>readonly="..."</code></li>
+<li><code>required="..."</code></li>
 </ul>
+<p>Las expresiones usan sintaxis similar a Python (<code>==</code>, <code>!=</code>, <code>and</code>, <code>or</code>, <code>not</code>, etc.).</p>
+<p>Ejemplo de patrón típico (equivalente al que antes se hacía con <code>attrs</code>):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;some_field&quot;</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">       </span><span class="na">invisible=</span><span class="s">&quot;is_done == True&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="ocultar-condicionalmente">Ocultar condicionalmente</h3>
+<p>Antes (con <code>attrs</code>):</p>
 <div class="language-xml highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;boyfriend_name&quot;</span>
 </span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="w">       </span><span class="na">attrs=</span><span class="s">&quot;{&#39;invisible&#39;: [(&#39;married&#39;, &#39;!=&#39;, False)]}&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<ul>
-<li>Readonly condicional:</li>
-</ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name2&quot;</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">       </span><span class="na">attrs=</span><span class="s">&quot;{&#39;readonly&#39;: [(&#39;condition&#39;, &#39;=&#39;, False)]}&quot;</span><span class="nt">/&gt;</span>
+<p>Ahora (Odoo 18):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;boyfriend_name&quot;</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="w">       </span><span class="na">invisible=</span><span class="s">&quot;married != False&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
-<ul>
-<li>Combinar reglas:</li>
-</ul>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">       </span><span class="na">attrs=</span><span class="s">&quot;{</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="s">           &#39;invisible&#39;: [(&#39;condition1&#39;, &#39;=&#39;, False)],</span>
-</span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="s">           &#39;required&#39;:  [(&#39;condition2&#39;, &#39;=&#39;, True)],</span>
-</span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a><span class="s">           &#39;readonly&#39;:  [(&#39;condition3&#39;, &#39;=&#39;, True)]</span>
-</span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="s">       }&quot;</span><span class="nt">/&gt;</span>
+<p>Si <code>married</code> es un booleano y quieres ocultar el campo cuando está casado:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;boyfriend_name&quot;</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="w">       </span><span class="na">invisible=</span><span class="s">&quot;married&quot;</span><span class="nt">/&gt;</span>
 </span></code></pre></div>
+<h3 id="readonly-condicional">Readonly condicional</h3>
+<p>Antes:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name2&quot;</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="w">       </span><span class="na">attrs=</span><span class="s">&quot;{&#39;readonly&#39;: [(&#39;condition&#39;, &#39;=&#39;, False)]}&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Ahora:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name2&quot;</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">       </span><span class="na">readonly=</span><span class="s">&quot;condition == False&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Otro ejemplo típico:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;amount&quot;</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="w">       </span><span class="na">readonly=</span><span class="s">&quot;state != &#39;draft&#39;&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<h3 id="combinar-varias-reglas">Combinar varias reglas</h3>
+<p>Antes (varias reglas dentro de <code>attrs</code>):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="w">       </span><span class="na">attrs=</span><span class="s">&quot;{</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="s">           &#39;invisible&#39;: [(&#39;condition1&#39;, &#39;=&#39;, False)],</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="s">           &#39;required&#39;:  [(&#39;condition2&#39;, &#39;=&#39;, True)],</span>
+</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="s">           &#39;readonly&#39;:  [(&#39;condition3&#39;, &#39;=&#39;, True)]</span>
+</span><span id="__span-36-6"><a id="__codelineno-36-6" name="__codelineno-36-6" href="#__codelineno-36-6"></a><span class="s">       }&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Ahora (cada atributo con su propia condición):</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="w">       </span><span class="na">invisible=</span><span class="s">&quot;condition1 == False&quot;</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="w">       </span><span class="na">required=</span><span class="s">&quot;condition2 == True&quot;</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="w">       </span><span class="na">readonly=</span><span class="s">&quot;condition3 == True&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Puedes usar expresiones más complejas, por ejemplo:</p>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;budget&quot;</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="w">       </span><span class="na">readonly=</span><span class="s">&quot;completion_rate == 100 or state == &#39;cancel&#39;&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;deadline&quot;</span>
+</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="w">       </span><span class="na">required=</span><span class="s">&quot;priority == &#39;high&#39; and not completed&quot;</span><span class="nt">/&gt;</span>
+</span></code></pre></div>
+<p>Guía rápida:</p>
+<ul>
+<li>Usa <code>invisible="expresión"</code> para mostrar/ocultar campos según otros campos.</li>
+<li>Usa <code>readonly="expresión"</code> para bloquear edición en ciertos estados.</li>
+<li>Usa <code>required="expresión"</code> para hacer obligatorios campos en determinadas condiciones.</li>
+</ul>
 
 
 
