@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../images/logo_peq.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2090,8 +2090,8 @@ Hay <strong>tres niveles</strong> típicos:</p>
 <li><strong>Acción de menú</strong> → ejecuta una acción (<code>ir.actions.*</code>) que abre una vista o lista.</li>
 </ol>
 <p>Ejemplo de definición en XML:
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;menuitem</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;menu_sales_main&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Ventas&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">&lt;menuitem</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;menu_orders&quot;</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;Pedidos&quot;</span><span class="w"> </span><span class="na">parent=</span><span class="s">&quot;menu_sales_main&quot;</span><span class="w"> </span><span class="na">action=</span><span class="s">&quot;action_sale_order&quot;</span><span class="nt">/&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nt">&lt;menuitem</span><span class="w"> </span><span class="na">id=</span><span class="s">"menu_sales_main"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Ventas"</span><span class="nt">/&gt;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nt">&lt;menuitem</span><span class="w"> </span><span class="na">id=</span><span class="s">"menu_orders"</span><span class="w"> </span><span class="na">name=</span><span class="s">"Pedidos"</span><span class="w"> </span><span class="na">parent=</span><span class="s">"menu_sales_main"</span><span class="w"> </span><span class="na">action=</span><span class="s">"action_sale_order"</span><span class="nt">/&gt;</span>
 </span></code></pre></div></p>
 <hr />
 <h2 id="acciones-iractionsact_window">Acciones: <code>ir.actions.act_window</code></h2>
@@ -2099,10 +2099,10 @@ Hay <strong>tres niveles</strong> típicos:</p>
 <ul>
 <li>Se guardan en la tabla <code>ir_actions_act_window</code>.</li>
 <li>En XML:
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;action_sale_order&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;ir.actions.act_window&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>Pedidos<span class="w"> </span>de<span class="w"> </span>Venta<span class="nt">&lt;/field&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;res_model&quot;</span><span class="nt">&gt;</span>sale.order<span class="nt">&lt;/field&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;view_mode&quot;</span><span class="nt">&gt;</span>list,form<span class="nt">&lt;/field&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"action_sale_order"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.actions.act_window"</span><span class="nt">&gt;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>Pedidos<span class="w"> </span>de<span class="w"> </span>Venta<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"res_model"</span><span class="nt">&gt;</span>sale.order<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"view_mode"</span><span class="nt">&gt;</span>list,form<span class="nt">&lt;/field&gt;</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nt">&lt;/record&gt;</span>
 </span></code></pre></div></li>
 </ul>
@@ -2269,7 +2269,7 @@ Hay <strong>tres niveles</strong> típicos:</p>
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../images/logo_peq.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -2022,7 +2022,7 @@
 <h2 id="i-que-es-un-domain-en-odoo">ℹ️ ¿Qué es un <em>domain</em> en Odoo?</h2>
 <p>Un <strong>domain</strong> en Odoo es una lista de condiciones que se utilizan para filtrar registros de un modelo.
 Su sintaxis básica es:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[(</span><span class="s1">&#39;campo&#39;</span><span class="p">,</span> <span class="s1">&#39;operador&#39;</span><span class="p">,</span> <span class="s1">&#39;valor&#39;</span><span class="p">)]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">[(</span><span class="s1">'campo'</span><span class="p">,</span> <span class="s1">'operador'</span><span class="p">,</span> <span class="s1">'valor'</span><span class="p">)]</span>
 </span></code></pre></div>
 <p>📌 <strong>Referencias oficiales</strong>:
 - <a href="https://www.odoo.com/documentation/18.0/developer/reference/backend/orm.html#domains">Documentación Odoo — Dominios</a>
@@ -2067,40 +2067,40 @@ Su sintaxis básica es:</p>
 </tbody>
 </table>
 <h3 id="ejemplo-simple">Ejemplo simple:</h3>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[(</span><span class="s1">&#39;is_done&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">[(</span><span class="s1">'is_done'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="kc">False</span><span class="p">)]</span>
 </span></code></pre></div>
 Devuelve registros donde <code>is_done</code> es <code>False</code>.</p>
 <h3 id="ejemplo-con-multiples-condiciones-and">Ejemplo con múltiples condiciones (AND):</h3>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[(</span><span class="s1">&#39;is_done&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;create_uid&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)]</span>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">[(</span><span class="s1">'is_done'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">'create_uid'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">uid</span><span class="p">)]</span>
 </span></code></pre></div>
 Devuelve tareas no realizadas y creadas por el usuario actual.</p>
 <h3 id="ejemplo-con-or">Ejemplo con OR:</h3>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span><span class="s1">&#39;|&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;is_done&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;create_uid&#39;</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">uid</span><span class="p">)]</span>
+<p><div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">[</span><span class="s1">'|'</span><span class="p">,</span> <span class="p">(</span><span class="s1">'is_done'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="kc">False</span><span class="p">),</span> <span class="p">(</span><span class="s1">'create_uid'</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">uid</span><span class="p">)]</span>
 </span></code></pre></div>
 Devuelve tareas <strong>pendientes</strong> o <strong>creadas por el usuario actual</strong>.</p>
 <hr />
 <h2 id="anadimos-los-filtros-a-viewstask_viewsxml">Añadimos los filtros a <code>views/task_views.xml</code></h2>
 <p><strong>Ruta:</strong> <code>task_app/views/task_views.xml</code></p>
-<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;view_task_model_search&quot;</span><span class="w"> </span><span class="na">model=</span><span class="s">&quot;ir.ui.view&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">&gt;</span>task_app.task_model_search<span class="nt">&lt;/field&gt;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;model&quot;</span><span class="nt">&gt;</span>task_app.task_model<span class="nt">&lt;/field&gt;</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;arch&quot;</span><span class="w"> </span><span class="na">type=</span><span class="s">&quot;xml&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">&lt;search</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Search Tasks&quot;</span><span class="nt">&gt;</span>
+<div class="language-xml highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="w">  </span><span class="nt">&lt;record</span><span class="w"> </span><span class="na">id=</span><span class="s">"view_task_model_search"</span><span class="w"> </span><span class="na">model=</span><span class="s">"ir.ui.view"</span><span class="nt">&gt;</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">&gt;</span>task_app.task_model_search<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"model"</span><span class="nt">&gt;</span>task_app.task_model<span class="nt">&lt;/field&gt;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"arch"</span><span class="w"> </span><span class="na">type=</span><span class="s">"xml"</span><span class="nt">&gt;</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="nt">&lt;search</span><span class="w"> </span><span class="na">string=</span><span class="s">"Search Tasks"</span><span class="nt">&gt;</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="w">        </span><span class="cm">&lt;!-- Campo por el que se puede buscar --&gt;</span>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;name&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">        </span><span class="nt">&lt;field</span><span class="w"> </span><span class="na">name=</span><span class="s">"name"</span><span class="nt">/&gt;</span>
 </span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">        </span><span class="cm">&lt;!-- Filtro: Mis tareas --&gt;</span>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nt">&lt;filter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;my_tasks&quot;</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Mis tareas&quot;</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">                </span><span class="na">domain=</span><span class="s">&quot;[(&#39;create_uid&#39;, &#39;=&#39;, uid)]&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">        </span><span class="nt">&lt;filter</span><span class="w"> </span><span class="na">name=</span><span class="s">"my_tasks"</span><span class="w"> </span><span class="na">string=</span><span class="s">"Mis tareas"</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">                </span><span class="na">domain=</span><span class="s">"[('create_uid', '=', uid)]"</span><span class="nt">/&gt;</span>
 </span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">        </span><span class="cm">&lt;!-- Filtro: Pendientes --&gt;</span>
-</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="nt">&lt;filter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;pending_tasks&quot;</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Pendientes&quot;</span>
-</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">                </span><span class="na">domain=</span><span class="s">&quot;[(&#39;is_done&#39;, &#39;=&#39;, False)]&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">        </span><span class="nt">&lt;filter</span><span class="w"> </span><span class="na">name=</span><span class="s">"pending_tasks"</span><span class="w"> </span><span class="na">string=</span><span class="s">"Pendientes"</span>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="w">                </span><span class="na">domain=</span><span class="s">"[('is_done', '=', False)]"</span><span class="nt">/&gt;</span>
 </span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
 </span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="w">        </span><span class="cm">&lt;!-- Agrupación opcional --&gt;</span>
-</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">expand=</span><span class="s">&quot;0&quot;</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Group By&quot;</span><span class="nt">&gt;</span>
-</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">          </span><span class="nt">&lt;filter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;group_by_done&quot;</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Estado&quot;</span><span class="w"> </span><span class="na">context=</span><span class="s">&quot;{&#39;group_by&#39;:&#39;is_done&#39;}&quot;</span><span class="nt">/&gt;</span>
-</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">          </span><span class="nt">&lt;filter</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;group_by_creator&quot;</span><span class="w"> </span><span class="na">string=</span><span class="s">&quot;Creador&quot;</span><span class="w"> </span><span class="na">context=</span><span class="s">&quot;{&#39;group_by&#39;:&#39;create_uid&#39;}&quot;</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a><span class="w">        </span><span class="nt">&lt;group</span><span class="w"> </span><span class="na">expand=</span><span class="s">"0"</span><span class="w"> </span><span class="na">string=</span><span class="s">"Group By"</span><span class="nt">&gt;</span>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="w">          </span><span class="nt">&lt;filter</span><span class="w"> </span><span class="na">name=</span><span class="s">"group_by_done"</span><span class="w"> </span><span class="na">string=</span><span class="s">"Estado"</span><span class="w"> </span><span class="na">context=</span><span class="s">"{'group_by':'is_done'}"</span><span class="nt">/&gt;</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="w">          </span><span class="nt">&lt;filter</span><span class="w"> </span><span class="na">name=</span><span class="s">"group_by_creator"</span><span class="w"> </span><span class="na">string=</span><span class="s">"Creador"</span><span class="w"> </span><span class="na">context=</span><span class="s">"{'group_by':'create_uid'}"</span><span class="nt">/&gt;</span>
 </span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a><span class="w">        </span><span class="nt">&lt;/group&gt;</span>
 </span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="w">      </span><span class="nt">&lt;/search&gt;</span>
 </span><span id="__span-4-23"><a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a><span class="w">    </span><span class="nt">&lt;/field&gt;</span>
@@ -2115,9 +2115,9 @@ Devuelve tareas <strong>pendientes</strong> o <strong>creadas por el usuario act
 <li><strong>Actualizar</strong> el módulo <strong>task_app</strong>.</li>
 </ol>
 <h3 id="con-docker-cli">Con Docker (CLI)</h3>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>odoo18_web_1<span class="w"> </span>sh<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="s1">  odoo     --db_host=db     --db_port=5432     --db_user=odoo     --db_password=&quot;$(cat /run/secrets/postgresql_password)&quot;     --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons     -d odoodb -u task_app --stop-after-init</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="s1">&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>odoo18_web_1<span class="w"> </span>sh<span class="w"> </span>-lc<span class="w"> </span><span class="s1">'</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="s1">  odoo     --db_host=db     --db_port=5432     --db_user=odoo     --db_password="$(cat /run/secrets/postgresql_password)"     --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons     -d odoodb -u task_app --stop-after-init</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="s1">'</span>
 </span></code></pre></div>
 <hr />
 <h2 id="verificar-en-la-interfaz">Verificar en la interfaz</h2>
@@ -2201,7 +2201,7 @@ Devuelve tareas <strong>pendientes</strong> o <strong>creadas por el usuario act
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

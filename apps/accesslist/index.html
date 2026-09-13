@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../images/logo_peq.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1947,9 +1947,9 @@ Para restringir por filas (dominios), usa <strong>Reglas de registro (<code>ir.r
 <hr />
 <h2 id="anadir-el-accesscsv-al-__manifest__py">Añadir el <code>access.csv</code> al <code>__manifest__.py</code></h2>
 <p>Edita <code>task_app/__manifest__.py</code> y asegúrate de que <strong><code>security/ir.model.access.csv</code></strong> aparece <strong>antes</strong> que las vistas/menús en <code>data</code>:</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="s2">&quot;security/ir.model.access.csv&quot;</span><span class="p">,</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="s2">&quot;views/task_menus_actions.xml&quot;</span><span class="p">,</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="s2">"data"</span><span class="p">:</span> <span class="p">[</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="s2">"security/ir.model.access.csv"</span><span class="p">,</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="s2">"views/task_menus_actions.xml"</span><span class="p">,</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">],</span>
 </span></code></pre></div>
 <blockquote>
@@ -1965,9 +1965,9 @@ Para restringir por filas (dominios), usa <strong>Reglas de registro (<code>ir.r
 </ol>
 <h3 id="con-docker-cli">Con Docker (CLI)</h3>
 <p>Usando dos contenedores (<code>web</code> y <code>db</code>), ejecuta (ajusta nombres/base/credenciales):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>odoo18_web_1<span class="w"> </span>sh<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s1">  odoo     --db_host=db     --db_port=5432     --db_user=odoo     --db_password=&quot;$(cat /run/secrets/postgresql_password)&quot;     --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons     -d odoodb -u task_app --stop-after-init</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s1">&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>odoo18_web_1<span class="w"> </span>sh<span class="w"> </span>-lc<span class="w"> </span><span class="s1">'</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s1">  odoo     --db_host=db     --db_port=5432     --db_user=odoo     --db_password="$(cat /run/secrets/postgresql_password)"     --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons     -d odoodb -u task_app --stop-after-init</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s1">'</span>
 </span></code></pre></div>
 <blockquote>
 <p><code>--stop-after-init</code> evita conflictos con el puerto 8069 si el servidor ya está corriendo en el contenedor.</p>
@@ -2059,7 +2059,7 @@ Para restringir por filas (dominios), usa <strong>Reglas de registro (<code>ir.r
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>

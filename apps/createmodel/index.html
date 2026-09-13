@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="../../images/logo_peq.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1961,12 +1961,12 @@
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">odoo</span><span class="w"> </span><span class="kn">import</span> <span class="n">fields</span><span class="p">,</span> <span class="n">models</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">class</span><span class="w"> </span><span class="nc">TaskModel</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">_name</span> <span class="o">=</span> <span class="s2">&quot;task_app.task_model&quot;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">_description</span> <span class="o">=</span> <span class="s2">&quot;Task (basic model)&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">_name</span> <span class="o">=</span> <span class="s2">"task_app.task_model"</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">_description</span> <span class="o">=</span> <span class="s2">"Task (basic model)"</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">description</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">&quot;Description&quot;</span><span class="p">)</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">is_done</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">&quot;Done&quot;</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">name</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Char</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">"Name"</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">description</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Text</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">"Description"</span><span class="p">)</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="n">is_done</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">Boolean</span><span class="p">(</span><span class="n">string</span><span class="o">=</span><span class="s2">"Done"</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </span></code></pre></div>
 <p><strong>Notas:</strong>
 - <code>_name</code> es el <strong>nombre técnico del modelo</strong> (<code>task_app.task.model</code>) → en PostgreSQL la tabla será <code>task_app_task_model</code>.
@@ -1991,9 +1991,9 @@
 </ol>
 <h3 id="42-con-docker-cli">4.2. Con Docker (CLI)</h3>
 <p>Si usas dos contenedores (<code>web</code> con Odoo y <code>db</code> con PostgreSQL), ejecuta (ajusta nombres/base/credenciales a tu entorno):</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>odoo18_web_1<span class="w"> </span>sh<span class="w"> </span>-lc<span class="w"> </span><span class="s1">&#39;</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s1">  odoo     --db_host=db     --db_port=5432     --db_user=odoo     --db_password=&quot;$(cat /run/secrets/postgresql_password)&quot;     --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons     -d odoodb -u task_app --stop-after-init</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s1">&#39;</span>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>odoo18_web_1<span class="w"> </span>sh<span class="w"> </span>-lc<span class="w"> </span><span class="s1">'</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="s1">  odoo     --db_host=db     --db_port=5432     --db_user=odoo     --db_password="$(cat /run/secrets/postgresql_password)"     --addons-path=/usr/lib/python3/dist-packages/odoo/addons,/mnt/extra-addons     -d odoodb -u task_app --stop-after-init</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="s1">'</span>
 </span></code></pre></div>
 <ul>
 <li><code>-u task_app</code> <strong>actualiza</strong> el módulo para que Odoo <strong>registre</strong> el nuevo modelo.</li>
@@ -2026,7 +2026,7 @@
 <div class="language-sql highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">-- Tabla esperada: task_app_task_model</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">SELECT</span><span class="w"> </span><span class="k">column_name</span><span class="p">,</span><span class="w"> </span><span class="n">data_type</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="k">FROM</span><span class="w"> </span><span class="n">information_schema</span><span class="p">.</span><span class="n">columns</span>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;task_app_task_model&#39;</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="k">WHERE</span><span class="w"> </span><span class="k">table_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'task_app_task_model'</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">ordinal_position</span><span class="p">;</span>
 </span></code></pre></div>
 <h2 id="actividades">📝 Actividades</h2>
@@ -2088,7 +2088,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
     
   </body>
